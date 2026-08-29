@@ -658,40 +658,75 @@
   }
 }
 
-@media (max-width: 768px) {
-  .contact-hero-section {
-    padding: 3.5rem 0 4.5rem;
-  }
-
-  .contact-hero-headline {
-    font-size: 2.35rem;
-  }
-
+@media (max-width: 839px) {
   .contact-main-section,
   .contact-cta-section {
     padding: 5rem 0;
   }
 
   .contact-quote-section {
-    padding: 6rem 0;
+    padding: 5.5rem 0;
+  }
+
+  .inquiry-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .contact-hero-section {
+    padding: 3rem 0 4rem;
+  }
+
+  .contact-hero-headline {
+    font-size: clamp(2rem, 7vw, 2.35rem);
+  }
+
+  .contact-main-section,
+  .contact-cta-section {
+    padding: 4rem 0;
+  }
+
+  .contact-quote-section {
+    padding: 4.5rem 0;
   }
 
   .contact-channels-card,
   .contact-form-card,
   .inquiry-types-card {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .contact-block-title {
+    font-size: 1.65rem;
   }
 
   .inquiry-types-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-main-heading {
+    font-size: 1.75rem;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px; /* Prevents iOS auto-zoom on input focus */
+    padding: 0.8rem 1rem;
   }
 
   .form-submit-btn {
     width: 100%;
   }
 
+  .contact-focal-quote {
+    font-size: clamp(1.45rem, 5.5vw, 1.95rem);
+  }
+
   .contact-cta-box {
-    padding: 3.5rem 1.5rem;
+    padding: 3.5rem 1.25rem;
   }
 
   .cta-actions-group {

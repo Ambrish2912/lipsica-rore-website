@@ -1117,23 +1117,7 @@
   }
 }
 
-@media (max-width: 768px) {
-  .leadership-hero-section {
-    padding: 3.5rem 0 4.5rem;
-  }
-
-  .leadership-hero-headline {
-    font-size: 2.35rem;
-  }
-
-  .leadership-portrait-frame {
-    max-width: 340px;
-  }
-
-  .leadership-sanctuary-inner {
-    height: 320px;
-  }
-
+@media (max-width: 839px) {
   .leadership-profile-section,
   .healthcare-section,
   .governance-section,
@@ -1147,15 +1131,7 @@
   }
 
   .social-impact-section {
-    padding: 6rem 0;
-  }
-
-  .social-impact-card {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .impact-huge-number {
-    font-size: 3.8rem;
+    padding: 5.5rem 0;
   }
 
   .governance-item {
@@ -1163,17 +1139,67 @@
     gap: 0.75rem;
     padding: 1.75rem 1.5rem;
   }
+}
 
-  .speaking-editorial-card {
-    padding: 2.5rem 1.5rem;
+@media (max-width: 599px) {
+  .leadership-hero-section {
+    padding: 3rem 0 4rem;
   }
 
+  .leadership-hero-headline {
+    font-size: clamp(2rem, 7vw, 2.35rem);
+  }
+
+  .leadership-portrait-frame {
+    max-width: 100%;
+  }
+
+  .leadership-sanctuary-inner {
+    height: 290px;
+  }
+
+  .leadership-profile-section,
+  .healthcare-section,
+  .governance-section,
+  .community-section,
+  .initiatives-section,
+  .speaking-section,
+  .qualifications-section,
+  .philosophy-reflection-section,
+  .leadership-cta-section {
+    padding: 4rem 0;
+  }
+
+  .social-impact-section {
+    padding: 4.5rem 0;
+  }
+
+  .social-impact-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .impact-huge-number {
+    font-size: clamp(2.8rem, 11vw, 4.2rem);
+    word-break: break-word;
+  }
+
+  .impact-label-main {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+
+  .healthcare-card,
+  .community-card,
+  .initiative-editorial-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .speaking-editorial-card,
   .philosophy-reflection-card {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 1.25rem;
   }
 
   .leadership-cta-box {
-    padding: 3.5rem 1.5rem;
+    padding: 3.5rem 1.25rem;
   }
 
   .cta-actions-group {

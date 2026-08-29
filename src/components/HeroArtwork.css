@@ -206,3 +206,32 @@
   color: var(--color-warm-ivory);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
+
+/* Responsive Scaling */
+@media (max-width: 599px) {
+  .gallery-frame-outer {
+    padding: 0.75rem;
+  }
+
+  .gallery-mat {
+    padding: 0.5rem;
+  }
+
+  .art-aura-shape {
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    filter: blur(10px);
+  }
+
+  .canvas-muza-signature {
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .signature-text {
+    font-size: 0.9rem;
+  }
+}
+

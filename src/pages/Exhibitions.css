@@ -767,33 +767,13 @@
   }
 }
 
-@media (max-width: 768px) {
-  .exhibitions-hero-section {
-    padding: 3.5rem 0 4.5rem;
-  }
-
-  .exhibitions-hero-headline {
-    font-size: 2.35rem;
-  }
-
+@media (max-width: 839px) {
   .latest-showcase-section,
   .exhibitions-archive-section,
   .evolution-reflection-section,
   .media-spotlight-section,
   .exhibition-cta-section {
     padding: 5rem 0;
-  }
-
-  .latest-exhibition-card {
-    padding: 2.25rem 1.5rem;
-  }
-
-  .latest-year-display {
-    font-size: 1.6rem;
-  }
-
-  .archive-section-header {
-    margin-bottom: 3.5rem;
   }
 
   /* Single Column Mobile Timeline */
@@ -835,22 +815,91 @@
     margin-bottom: 0.5rem;
     border: 1px solid rgba(198, 161, 91, 0.3);
   }
+}
+
+@media (max-width: 599px) {
+  .exhibitions-hero-section {
+    padding: 3rem 0 4rem;
+  }
+
+  .exhibitions-hero-headline {
+    font-size: clamp(2rem, 7vw, 2.35rem);
+  }
+
+  .latest-showcase-section,
+  .exhibitions-archive-section,
+  .evolution-reflection-section,
+  .media-spotlight-section,
+  .exhibition-cta-section {
+    padding: 4rem 0;
+  }
+
+  .latest-exhibition-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .latest-showcase-title {
+    font-size: clamp(1.85rem, 6vw, 2.4rem);
+  }
+
+  .latest-year-display {
+    font-size: 1.5rem;
+  }
+
+  .era-filters-nav {
+    gap: 0.4rem;
+  }
+
+  .era-filter-btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.72rem;
+  }
+
+  .gallery-timeline-row {
+    grid-template-columns: 32px 1fr;
+    gap: 0.75rem;
+  }
+
+  .timeline-spine-line {
+    left: 16px;
+  }
+
+  .timeline-node-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .timeline-exhibition-card {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .card-exhibition-title {
+    font-size: clamp(1.25rem, 4.5vw, 1.45rem);
+  }
 
   .evolution-card-wrapper {
-    padding: 3rem 1.5rem;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .evolution-quote {
+    font-size: clamp(1.25rem, 5vw, 1.55rem);
   }
 
   .evolution-milestone-flow {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.65rem;
   }
 
   .milestone-arrow {
     display: none;
   }
 
+  .media-spotlight-card {
+    padding: 2rem 1.25rem;
+  }
+
   .exhibition-cta-box {
-    padding: 3.5rem 1.5rem;
+    padding: 3.5rem 1.25rem;
   }
 
   .cta-actions-row {

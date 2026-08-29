@@ -1714,7 +1714,7 @@
 }
 
 /* =========================================
-   RESPONSIVE DESIGN BREAKPOINTS
+   RESPONSIVE BREAKPOINTS
    ========================================= */
 @media (max-width: 1024px) {
   .hero-section {
@@ -1788,76 +1788,19 @@
   }
 }
 
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 3rem 1.25rem 3.5rem;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.65rem;
-    padding: 0.35rem 0.85rem;
-    letter-spacing: 0.12em;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero-headline {
-    font-size: 2.15rem;
-    line-height: 1.2;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .hero-btn-primary,
-  .hero-btn-secondary {
-    width: 100%;
-  }
-
-  .hero-art-display {
-    max-width: 300px;
-  }
-
-  .featured-artworks-section {
+@media (max-width: 839px) {
+  .about-preview-section,
+  .featured-artworks-section,
+  .exhibitions-highlight-section,
+  .leadership-section,
+  .muza-statement-section,
+  .final-cta-section {
     padding: 5rem 0;
   }
 
-  .artworks-section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
-  }
-
   .artworks-grid {
-    grid-template-columns: 1fr;
-    max-width: 440px;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 2rem;
-  }
-
-  /* Exhibitions Mobile Styles */
-  .exhibitions-highlight-section {
-    padding: 5.5rem 0;
-  }
-
-  .featured-showcase-inner {
-    padding: 1.75rem 1.5rem;
-  }
-
-  .showcase-body {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-  }
-
-  .showcase-location-box {
-    align-items: flex-start;
-    text-align: left;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .timeline-central-spine {
@@ -1899,79 +1842,142 @@
     border: 1px solid rgba(198, 161, 91, 0.3);
   }
 
-  /* Leadership Mobile Styles */
-  .leadership-section {
-    padding: 5.5rem 0 6rem;
-  }
-
-  .leadership-intro-header {
-    margin-bottom: 3rem;
-  }
-
-  .leadership-main-title {
-    font-size: 2.15rem;
-  }
-
-  .leadership-editorial-layout {
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-
-  .impact-showcase-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .impact-stat-number {
-    font-size: 3.4rem;
-  }
-
   .leadership-areas-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .hero-section {
+    padding: 3rem 1.25rem 3.5rem;
   }
 
-  .leadership-area-card {
-    padding: 1.6rem 1.35rem;
+  .hero-eyebrow {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.85rem;
+    letter-spacing: 0.12em;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  /* Muza Mobile Styles */
-  .muza-statement-section {
-    padding: 5.5rem 0 6.5rem;
+  .hero-headline {
+    font-size: clamp(1.95rem, 7.5vw, 2.35rem);
+    line-height: 1.2;
   }
 
-  .muza-editorial-split {
-    gap: 3rem;
-    margin-bottom: 4rem;
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
   }
 
-  .muza-main-heading {
-    font-size: 2.25rem;
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
   }
 
-  .muza-intro-lead {
-    font-size: 1.15rem;
-    margin-bottom: 1.75rem;
+  .hero-art-display {
+    max-width: 100%;
   }
 
-  .muza-abstract-art-frame {
-    height: 350px;
+  .about-preview-section,
+  .featured-artworks-section,
+  .exhibitions-highlight-section,
+  .leadership-section,
+  .muza-statement-section,
+  .final-cta-section {
+    padding: 4rem 0;
   }
 
-  .muza-focal-quote-section {
-    padding-top: 2.75rem;
-    margin-bottom: 3.5rem;
-  }
-
-  .muza-focal-blockquote {
-    font-size: 1.65rem;
+  .about-frame-inner {
+    height: 320px;
   }
 
   .pillars-grid {
     grid-template-columns: 1fr;
   }
 
-  .exhibitions-header {
+  .artworks-section-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .artworks-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 1.75rem;
+  }
+
+  .featured-showcase-inner {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .showcase-title {
+    font-size: clamp(2rem, 6.5vw, 2.6rem);
+  }
+
+  .showcase-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .showcase-location-box {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .timeline-entry-row {
+    grid-template-columns: 32px 1fr;
+    gap: 0.75rem;
+  }
+
+  .timeline-central-spine {
+    left: 16px;
+  }
+
+  .timeline-node-marker {
+    width: 32px;
+    height: 32px;
+  }
+
+  .timeline-content-card {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .impact-showcase-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .impact-stat-number {
+    font-size: clamp(2.8rem, 11vw, 3.8rem);
+    word-break: break-word;
+  }
+
+  .leadership-area-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .muza-abstract-art-frame {
+    height: 300px;
+  }
+
+  .muza-focal-blockquote {
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+  }
+
+  .final-cta-box {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .cta-buttons-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-buttons-row .btn {
+    width: 100%;
   }
 }

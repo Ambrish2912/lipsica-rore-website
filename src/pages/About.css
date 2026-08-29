@@ -885,19 +885,7 @@
   }
 }
 
-@media (max-width: 768px) {
-  .about-hero-section {
-    padding: 3.5rem 0 4.5rem;
-  }
-
-  .about-hero-headline {
-    font-size: 2.35rem;
-  }
-
-  .portrait-inner-sanctuary {
-    height: 340px;
-  }
-
+@media (max-width: 839px) {
   .about-journey-section,
   .about-muza-section,
   .about-healing-section,
@@ -908,20 +896,77 @@
   }
 
   .about-philosophy-section {
-    padding: 6rem 0;
+    padding: 5.5rem 0;
   }
 
   .philosophy-sub-passages {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
+}
+
+@media (max-width: 599px) {
+  .about-hero-section {
+    padding: 3rem 0 4rem;
+  }
+
+  .about-hero-headline {
+    font-size: clamp(2rem, 7vw, 2.35rem);
+  }
+
+  .portrait-showcase-frame {
+    max-width: 100%;
+    padding: 0.9rem;
+  }
+
+  .portrait-inner-sanctuary {
+    height: 290px;
+  }
+
+  .portrait-monogram-text {
+    font-size: 2.8rem;
+  }
+
+  .about-journey-section,
+  .about-muza-section,
+  .about-healing-section,
+  .about-themes-section,
+  .about-positioning-section,
+  .about-cta-section {
+    padding: 4rem 0;
+  }
+
+  .about-philosophy-section {
+    padding: 4.5rem 0;
+  }
+
+  .philosophy-focal-statement {
+    font-size: clamp(1.25rem, 5vw, 1.55rem);
+  }
+
+  .muza-sacred-symbolic-frame {
+    height: 280px;
+  }
+
+  .healing-dominant-quote {
+    font-size: clamp(1.25rem, 5vw, 1.55rem);
+  }
+
+  .healing-pillar-card {
+    padding: 1.75rem 1.25rem;
+  }
 
   .themes-editorial-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .theme-editorial-item {
+    padding: 1.75rem 1.25rem;
   }
 
   .positioning-editorial-card {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 1.25rem;
   }
 
   .positioning-facets-row {
@@ -934,7 +979,7 @@
   }
 
   .about-cta-box {
-    padding: 3.5rem 1.5rem;
+    padding: 3.5rem 1.25rem;
   }
 
   .cta-actions-group {

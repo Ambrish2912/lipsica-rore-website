@@ -640,15 +640,7 @@
   }
 }
 
-@media (max-width: 768px) {
-  .media-hero-section {
-    padding: 3.5rem 0 4.5rem;
-  }
-
-  .media-hero-headline {
-    font-size: 2.35rem;
-  }
-
+@media (max-width: 839px) {
   .featured-media-section,
   .media-dossier-section,
   .media-art-bridge-section,
@@ -657,21 +649,69 @@
   .media-cta-section {
     padding: 5rem 0;
   }
+}
+
+@media (max-width: 599px) {
+  .media-hero-section {
+    padding: 3rem 0 4rem;
+  }
+
+  .media-hero-headline {
+    font-size: clamp(2rem, 7vw, 2.35rem);
+  }
+
+  .featured-media-section,
+  .media-dossier-section,
+  .media-art-bridge-section,
+  .media-highlights-section,
+  .media-quote-section,
+  .media-cta-section {
+    padding: 4rem 0;
+  }
 
   .featured-media-card {
-    padding: 2.5rem 1.5rem;
+    padding: 1.75rem 1.25rem;
   }
 
   .featured-press-emblem-box {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .masthead-main {
+    font-size: clamp(1.4rem, 5vw, 1.85rem);
+  }
+
+  .featured-media-headline {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+
+  .dossier-column-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .bridge-sanctuary-card {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .bridge-quote {
+    font-size: clamp(1.25rem, 5vw, 1.55rem);
   }
 
   .highlights-editorial-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .highlight-editorial-item {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .quiet-statement-text {
+    font-size: clamp(1.25rem, 5vw, 1.55rem);
   }
 
   .media-cta-box {
-    padding: 3.5rem 1.5rem;
+    padding: 3.5rem 1.25rem;
   }
 
   .cta-actions-group {

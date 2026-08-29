@@ -991,15 +991,7 @@
   }
 }
 
-@media (max-width: 768px) {
-  .cv-hero-section {
-    padding: 3.5rem 0 4.5rem;
-  }
-
-  .cv-hero-headline {
-    font-size: 2.35rem;
-  }
-
+@media (max-width: 839px) {
   .cv-current-section,
   .cv-profile-section,
   .cv-qualifications-section,
@@ -1014,18 +1006,10 @@
   }
 
   .cv-impact-section {
-    padding: 6rem 0;
+    padding: 5.5rem 0;
   }
 
-  .cv-impact-card {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .huge-num {
-    font-size: 3.8rem;
-  }
-
-  /* Single Column Timeline on Mobile */
+  /* Single Column Timeline on Tablet/Mobile */
   .cv-timeline-vertical::before {
     left: 20px;
   }
@@ -1042,11 +1026,74 @@
   .timeline-center-node {
     justify-content: flex-start;
   }
+}
+
+@media (max-width: 599px) {
+  .cv-hero-section {
+    padding: 3rem 0 4rem;
+  }
+
+  .cv-hero-headline {
+    font-size: clamp(2rem, 7vw, 2.35rem);
+  }
+
+  .cv-current-section,
+  .cv-profile-section,
+  .cv-qualifications-section,
+  .cv-healthcare-section,
+  .cv-governance-section,
+  .cv-art-section,
+  .cv-media-section,
+  .cv-community-section,
+  .cv-summary-section,
+  .cv-cta-section {
+    padding: 4rem 0;
+  }
+
+  .cv-impact-section {
+    padding: 4.5rem 0;
+  }
+
+  .current-role-card,
+  .qual-editorial-card,
+  .cv-healthcare-card,
+  .timeline-right-details,
+  .cv-media-box,
+  .cv-community-box {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .cv-impact-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .huge-num {
+    font-size: clamp(2.8rem, 11vw, 4.2rem);
+    word-break: break-word;
+  }
+
+  .huge-lbl {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+
+  .cv-timeline-vertical::before {
+    left: 16px;
+  }
+
+  .cv-timeline-entry {
+    grid-template-columns: 32px 1fr;
+    gap: 0.75rem;
+  }
+
+  .node-outer-ring {
+    width: 32px;
+    height: 32px;
+  }
 
   .cv-exhibition-row {
     grid-template-columns: 1fr;
     gap: 0.35rem;
-    padding: 1.25rem;
+    padding: 1.25rem 1rem;
   }
 
   .ex-loc {
@@ -1054,8 +1101,12 @@
     text-align: left;
   }
 
+  .cv-summary-card {
+    padding: 2.5rem 1.25rem;
+  }
+
   .cv-cta-box {
-    padding: 3.5rem 1.5rem;
+    padding: 3.5rem 1.25rem;
   }
 
   .cta-actions-group {
