@@ -1,0 +1,949 @@
+/* About Page Styles — Lipsica Rore */
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   COMMON TYPOGRAPHY & EYEBROWS
+   ========================================= */
+.section-gold-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-champagne-gold);
+  background: rgba(198, 161, 91, 0.12);
+  padding: 0.35rem 1.15rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-gold);
+  margin-bottom: 1.25rem;
+}
+
+.section-serif-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+/* =========================================
+   1. ABOUT HERO SECTION
+   ========================================= */
+.about-hero-section {
+  position: relative;
+  padding: 5.5rem 0 6.5rem;
+  background-color: var(--color-warm-ivory);
+  background-image: 
+    radial-gradient(ellipse at 80% 25%, rgba(198, 161, 91, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 15% 75%, rgba(185, 130, 143, 0.06) 0%, transparent 55%);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.about-hero-ambient {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.07) 0%, rgba(185, 130, 143, 0.05) 50%, transparent 70%);
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 4.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-deep-plum);
+  background: rgba(185, 130, 143, 0.12);
+  padding: 0.4rem 1.15rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(185, 130, 143, 0.35);
+  margin-bottom: 1.6rem;
+}
+
+.about-hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 4.8vw, 4.2rem);
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.75rem;
+}
+
+.headline-italic {
+  font-style: italic;
+  font-weight: 400;
+  color: #4a2244;
+}
+
+.about-hero-subtext {
+  font-family: var(--font-serif);
+  font-size: clamp(1.12rem, 1.4vw, 1.28rem);
+  line-height: 1.7;
+  color: #463d44;
+  font-style: italic;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.about-hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-champagne-gold);
+  padding: 0.45rem 1rem;
+  background: rgba(198, 161, 91, 0.1);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-gold);
+}
+
+.location-pin-icon {
+  color: var(--color-champagne-gold);
+}
+
+/* Portrait Presentation Box */
+.about-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait-showcase-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 1.25rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 45px rgba(50, 21, 46, 0.08), 0 0 25px rgba(198, 161, 91, 0.1);
+}
+
+.portrait-inner-sanctuary {
+  height: 440px;
+  background: linear-gradient(135deg, #32152E 0%, #1F0B1D 100%);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portrait-sacred-aura {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait-aura-svg {
+  width: 80%;
+  height: 80%;
+  animation: auraFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes auraFloat {
+  0% { transform: scale(0.98) rotate(0deg); }
+  100% { transform: scale(1.02) rotate(3deg); }
+}
+
+.portrait-monogram-box {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portrait-monogram-text {
+  font-family: var(--font-serif);
+  font-size: 3.8rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-champagne-gold);
+  line-height: 1;
+}
+
+.portrait-monogram-caption {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(248, 243, 236, 0.7);
+}
+
+.portrait-frame-gold-border {
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(198, 161, 91, 0.3);
+  border-radius: calc(var(--radius-md) - 4px);
+  pointer-events: none;
+}
+
+/* =========================================
+   2. ARTIST JOURNEY SECTION
+   ========================================= */
+.about-journey-section {
+  padding: 8rem 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.journey-editorial-wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.journey-header-block {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 4rem;
+}
+
+.journey-story-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4.5rem;
+  align-items: flex-start;
+}
+
+.journey-column.primary-story {
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-lead-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.28rem, 1.8vw, 1.6rem);
+  line-height: 1.65;
+  color: var(--color-deep-plum);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.journey-gold-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-champagne-gold);
+}
+
+.journey-column.secondary-story {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.journey-body-text {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   3. ARTISTIC PHILOSOPHY (DEEP PLUM SANCTUARY)
+   ========================================= */
+.about-philosophy-section {
+  position: relative;
+  padding: 8.5rem 0 9.5rem;
+  background-color: var(--color-deep-plum);
+  color: var(--color-warm-ivory);
+  border-bottom: 1px solid var(--border-gold);
+  overflow: hidden;
+}
+
+.philosophy-ambient-glow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.08) 0%, rgba(185, 130, 143, 0.05) 45%, transparent 70%);
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.philosophy-container-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.philosophy-gold-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-champagne-gold);
+  background: rgba(198, 161, 91, 0.12);
+  padding: 0.35rem 1.15rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-gold);
+  margin-bottom: 1.35rem;
+}
+
+.philosophy-serif-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.4vw, 3.7rem);
+  font-weight: 600;
+  color: var(--color-warm-ivory);
+  line-height: 1.15;
+  margin-bottom: 3.5rem;
+}
+
+.philosophy-statements-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.philosophy-focal-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+  line-height: 1.6;
+  color: var(--color-warm-ivory);
+  font-style: italic;
+  margin-bottom: 2.75rem;
+  max-width: 800px;
+}
+
+.philosophy-divider-line {
+  width: 60px;
+  height: 1px;
+  background: var(--color-champagne-gold);
+  margin-bottom: 2.75rem;
+  opacity: 0.75;
+}
+
+.philosophy-sub-passages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  text-align: left;
+}
+
+.philosophy-passage {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(248, 243, 236, 0.85);
+  font-family: var(--font-sans);
+}
+
+.philosophy-passage strong {
+  color: var(--color-champagne-gold);
+}
+
+/* =========================================
+   4. MUZA — THE INNER MUSE
+   ========================================= */
+.about-muza-section {
+  padding: 8.5rem 0;
+  background-color: var(--color-warm-ivory);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.about-muza-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-muza-narrative {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-muza-explanation {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  line-height: 1.65;
+  color: var(--color-deep-plum);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+
+.muza-large-typographic-emblem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.75rem 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  max-width: 440px;
+}
+
+.muza-emblem-watermark {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: var(--color-deep-plum);
+  line-height: 1;
+}
+
+.muza-emblem-sub {
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-champagne-gold);
+}
+
+.about-muza-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.muza-sacred-symbolic-frame {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 380px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.muza-symbolic-svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.muza-sacred-symbolic-frame:hover .muza-symbolic-svg {
+  transform: scale(1.04) rotate(2deg);
+}
+
+.muza-seal-marker {
+  position: absolute;
+  bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  z-index: 2;
+}
+
+.seal-line {
+  width: 24px;
+  height: 1px;
+  background: var(--color-champagne-gold);
+}
+
+.seal-name {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  letter-spacing: 0.3em;
+  color: var(--color-deep-plum);
+  font-weight: 600;
+}
+
+/* =========================================
+   5. HEALING & CREATIVE PRACTICE
+   ========================================= */
+.about-healing-section {
+  padding: 8rem 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.healing-section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 4.5rem;
+}
+
+.healing-split-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.healing-quote-column {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--color-champagne-gold);
+}
+
+.healing-dominant-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  line-height: 1.6;
+  color: var(--color-deep-plum);
+  font-style: italic;
+  margin: 0;
+}
+
+.healing-context-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.healing-pillar-card {
+  background: var(--color-warm-ivory);
+  border: 1px solid rgba(50, 21, 46, 0.08);
+  border-radius: var(--radius-md);
+  padding: 2.75rem 2.25rem;
+  box-shadow: 0 4px 20px rgba(50, 21, 46, 0.04);
+}
+
+.pillar-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.pillar-icon-box {
+  color: var(--color-champagne-gold);
+  font-size: 1.15rem;
+}
+
+.pillar-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-deep-plum);
+}
+
+.pillar-text {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.pillar-text:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   6. ARTISTIC THEMES SECTION
+   ========================================= */
+.about-themes-section {
+  padding: 8rem 0;
+  background-color: var(--color-warm-ivory);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.themes-section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 4.5rem;
+}
+
+.themes-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+.themes-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.theme-editorial-item {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(50, 21, 46, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 2.25rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  overflow: hidden;
+}
+
+.theme-editorial-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-champagne-gold);
+  box-shadow: 0 10px 28px rgba(50, 21, 46, 0.07);
+}
+
+.theme-item-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.theme-index {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-champagne-gold);
+  letter-spacing: 0.05em;
+}
+
+.theme-gold-dash {
+  width: 20px;
+  height: 1px;
+  background: var(--color-champagne-gold);
+  opacity: 0.6;
+}
+
+.theme-name {
+  font-family: var(--font-serif);
+  font-size: 1.38rem;
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+
+.theme-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.theme-bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--color-champagne-gold);
+  transition: width var(--transition-normal);
+}
+
+.theme-editorial-item:hover .theme-bottom-line {
+  width: 100%;
+}
+
+/* =========================================
+   7. PERSONAL POSITIONING SECTION
+   ========================================= */
+.about-positioning-section {
+  padding: 7rem 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.positioning-editorial-card {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 2.5rem;
+  background: var(--color-warm-ivory);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.positioning-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 1.25rem;
+}
+
+.positioning-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.positioning-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  line-height: 1.65;
+  color: #423b41;
+  font-style: italic;
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+}
+
+.positioning-facets-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.facet-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-deep-plum);
+}
+
+.facet-dot {
+  color: var(--color-champagne-gold);
+  font-size: 0.8rem;
+}
+
+/* =========================================
+   8. CALL TO ACTION SECTION
+   ========================================= */
+.about-cta-section {
+  padding: 7.5rem 0;
+  background-color: var(--color-warm-ivory);
+}
+
+.about-cta-box {
+  position: relative;
+  background: linear-gradient(135deg, #32152E 0%, #1F0B1D 100%);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 5rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(50, 21, 46, 0.2);
+}
+
+.cta-ambient-halo {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(198, 161, 91, 0.2) 0%, transparent 70%);
+  filter: blur(25px);
+  pointer-events: none;
+}
+
+.cta-content-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.cta-gold-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.cta-main-title {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  color: var(--color-warm-ivory);
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.cta-subtitle-text {
+  color: rgba(248, 243, 236, 0.85);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.75rem;
+}
+
+.cta-actions-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn-art {
+  padding: 1rem 2.2rem;
+}
+
+.cta-btn-exhibitions {
+  padding: 1rem 2.2rem;
+}
+
+.cta-btn-arrow {
+  color: var(--color-champagne-gold);
+  transition: transform var(--transition-fast);
+}
+
+.cta-btn-art:hover .cta-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================= */
+@media (max-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+
+  .about-hero-content {
+    align-items: center;
+  }
+
+  .about-hero-subtext {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .portrait-showcase-frame {
+    max-width: 380px;
+  }
+
+  .journey-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-muza-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+
+  .about-muza-narrative {
+    align-items: center;
+  }
+
+  .muza-large-typographic-emblem {
+    margin: 0 auto;
+  }
+
+  .healing-split-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .healing-quote-column {
+    padding-left: 0;
+    border-left: none;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--color-champagne-gold);
+    text-align: center;
+  }
+
+  .themes-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-section {
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .about-hero-headline {
+    font-size: 2.35rem;
+  }
+
+  .portrait-inner-sanctuary {
+    height: 340px;
+  }
+
+  .about-journey-section,
+  .about-muza-section,
+  .about-healing-section,
+  .about-themes-section,
+  .about-positioning-section,
+  .about-cta-section {
+    padding: 5rem 0;
+  }
+
+  .about-philosophy-section {
+    padding: 6rem 0;
+  }
+
+  .philosophy-sub-passages {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .themes-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .positioning-editorial-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .positioning-facets-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .facet-dot {
+    display: none;
+  }
+
+  .about-cta-box {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .cta-actions-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-btn-art,
+  .cta-btn-exhibitions {
+    width: 100%;
+  }
+}

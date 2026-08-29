@@ -1,0 +1,1188 @@
+/* Leadership & Impact Page Styles — Lipsica Rore */
+
+.leadership-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   1. LEADERSHIP PAGE HERO
+   ========================================= */
+.leadership-hero-section {
+  position: relative;
+  padding: 5.5rem 0 6.5rem;
+  background-color: var(--color-warm-ivory);
+  background-image: 
+    radial-gradient(ellipse at 85% 25%, rgba(198, 161, 91, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 15% 75%, rgba(185, 130, 143, 0.06) 0%, transparent 55%);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.leadership-hero-ambient {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.07) 0%, rgba(185, 130, 143, 0.04) 50%, transparent 70%);
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.leadership-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 4.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.leadership-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.leadership-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-deep-plum);
+  background: rgba(185, 130, 143, 0.12);
+  padding: 0.4rem 1.15rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(185, 130, 143, 0.35);
+  margin-bottom: 1.6rem;
+}
+
+.leadership-hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 4.8vw, 4.2rem);
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.75rem;
+}
+
+.leadership-hero-subtext {
+  font-family: var(--font-serif);
+  font-size: clamp(1.12rem, 1.4vw, 1.28rem);
+  line-height: 1.7;
+  color: #463d44;
+  font-style: italic;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.leadership-hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-champagne-gold);
+  padding: 0.45rem 1rem;
+  background: rgba(198, 161, 91, 0.1);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-gold);
+}
+
+.hero-pin-icon {
+  color: var(--color-champagne-gold);
+}
+
+/* Portrait Visual Frame */
+.leadership-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leadership-portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 1.25rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 45px rgba(50, 21, 46, 0.08), 0 0 25px rgba(198, 161, 91, 0.1);
+}
+
+.leadership-sanctuary-inner {
+  height: 420px;
+  background: linear-gradient(135deg, #32152E 0%, #1F0B1D 100%);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.leadership-aura-svg-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leadership-aura-svg {
+  width: 80%;
+  height: 80%;
+  animation: leadershipFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes leadershipFloat {
+  0% { transform: scale(0.98) rotate(0deg); }
+  100% { transform: scale(1.02) rotate(3deg); }
+}
+
+.leadership-seal-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seal-monogram {
+  font-family: var(--font-serif);
+  font-size: 3.6rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-champagne-gold);
+  line-height: 1;
+}
+
+.seal-subtitle {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(248, 243, 236, 0.75);
+}
+
+.leadership-frame-gold-border {
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(198, 161, 91, 0.3);
+  border-radius: calc(var(--radius-md) - 4px);
+  pointer-events: none;
+}
+
+/* =========================================
+   2. PROFILE / POSITIONING SECTION
+   ========================================= */
+.leadership-profile-section {
+  padding: 8rem 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.profile-editorial-card {
+  max-width: 940px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-serif-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.16;
+  margin-bottom: 2.5rem;
+}
+
+.profile-lead-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  line-height: 1.65;
+  color: var(--color-deep-plum);
+  font-style: italic;
+  margin-bottom: 2.75rem;
+}
+
+.profile-gold-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-champagne-gold);
+  opacity: 0.8;
+}
+
+/* =========================================
+   3. SOCIAL IMPACT (DEEP PLUM SANCTUARY)
+   ========================================= */
+.social-impact-section {
+  position: relative;
+  padding: 8.5rem 0 9.5rem;
+  background-color: var(--color-deep-plum);
+  color: var(--color-warm-ivory);
+  border-bottom: 1px solid var(--border-gold);
+  overflow: hidden;
+}
+
+.social-impact-glow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.1) 0%, rgba(185, 130, 143, 0.05) 50%, transparent 70%);
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.social-impact-card {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 4.5rem 4rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(198, 161, 91, 0.04) 100%);
+  border: 1px solid var(--color-champagne-gold);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35), 0 0 30px rgba(198, 161, 91, 0.15);
+  z-index: 2;
+}
+
+.impact-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(198, 161, 91, 0.25);
+}
+
+.impact-gold-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-deep-plum);
+  background: var(--color-champagne-gold);
+  padding: 0.35rem 1.15rem;
+  border-radius: var(--radius-full);
+}
+
+.impact-state-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-champagne-gold);
+}
+
+.impact-focal-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.impact-metric-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-huge-number {
+  font-family: var(--font-serif);
+  font-size: clamp(4.5rem, 8vw, 6.5rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-champagne-gold);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.impact-huge-label {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 500;
+  color: var(--color-warm-ivory);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.impact-huge-sub {
+  font-size: 0.95rem;
+  color: var(--color-dusty-rose);
+  letter-spacing: 0.05em;
+}
+
+.impact-narrative-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-narrative-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--color-warm-ivory);
+  margin-bottom: 1.25rem;
+}
+
+.impact-narrative-p {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: rgba(248, 243, 236, 0.9);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.impact-highlight-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(198, 161, 91, 0.12);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  margin-top: 1.5rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--color-warm-ivory);
+}
+
+.badge-check-icon {
+  color: var(--color-champagne-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.impact-gold-frame-accent {
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(198, 161, 91, 0.3);
+  border-radius: calc(var(--radius-md) - 4px);
+  pointer-events: none;
+}
+
+/* =========================================
+   4. HEALTHCARE & ENTREPRENEURSHIP
+   ========================================= */
+.healthcare-section {
+  padding: 8rem 0;
+  background-color: var(--color-warm-ivory);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.healthcare-header-block {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 5rem;
+}
+
+.healthcare-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.healthcare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.healthcare-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(50, 21, 46, 0.09);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 8px 30px rgba(50, 21, 46, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.healthcare-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-champagne-gold);
+  box-shadow: 0 16px 40px rgba(50, 21, 46, 0.08);
+}
+
+.card-top-icon {
+  margin-bottom: 1.25rem;
+}
+
+.card-icon-gold {
+  color: var(--color-champagne-gold);
+}
+
+.card-category-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 0.75rem;
+}
+
+.healthcare-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.healthcare-card-org {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #4a4148;
+  margin-bottom: 1.25rem;
+}
+
+.healthcare-spec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  background: var(--color-warm-ivory);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--color-deep-plum);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(50, 21, 46, 0.08);
+}
+
+.spec-dot {
+  color: var(--color-champagne-gold);
+  font-size: 1.1rem;
+}
+
+.healthcare-card-body {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   5. GOVERNANCE & DIRECTORSHIPS
+   ========================================= */
+.governance-section {
+  padding: 8rem 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.governance-wrapper {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.governance-header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.governance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.governance-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 2rem;
+  padding: 2.25rem 2.5rem;
+  background: var(--color-warm-ivory);
+  border: 1px solid rgba(50, 21, 46, 0.08);
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+  overflow: hidden;
+}
+
+.governance-item:hover {
+  transform: translateX(6px);
+  border-color: var(--color-champagne-gold);
+}
+
+.gov-num-col {
+  display: flex;
+  align-items: flex-start;
+}
+
+.gov-num {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-champagne-gold);
+}
+
+.gov-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gov-role-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.gov-role {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-champagne-gold);
+}
+
+.gov-sep {
+  color: var(--color-champagne-gold);
+}
+
+.gov-org {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  margin: 0;
+}
+
+.gov-sub {
+  font-size: 0.88rem;
+  color: var(--color-dusty-rose);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.gov-note {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.gov-gold-dash {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-champagne-gold);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.governance-item:hover .gov-gold-dash {
+  opacity: 1;
+}
+
+/* =========================================
+   6. COMMUNITY LEADERSHIP SECTION
+   ========================================= */
+.community-section {
+  padding: 8rem 0;
+  background-color: var(--color-warm-ivory);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.community-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 5rem;
+}
+
+.community-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.community-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(50, 21, 46, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  overflow: hidden;
+}
+
+.community-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-champagne-gold);
+  box-shadow: 0 12px 35px rgba(50, 21, 46, 0.07);
+}
+
+.community-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.community-period-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-champagne-gold);
+  background: rgba(198, 161, 91, 0.12);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-gold);
+}
+
+.community-index {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-deep-plum);
+}
+
+.community-role-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.community-org-name {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #4a4148;
+  margin-bottom: 1rem;
+}
+
+.community-role-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.community-card-bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--color-champagne-gold);
+  transition: width var(--transition-normal);
+}
+
+.community-card:hover .community-card-bottom-line {
+  width: 100%;
+}
+
+/* =========================================
+   7. SELECT COMMUNITY INITIATIVES
+   ========================================= */
+.initiatives-section {
+  padding: 8rem 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.initiatives-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 5rem;
+}
+
+.initiatives-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.initiatives-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.initiative-editorial-card {
+  background: var(--color-warm-ivory);
+  border: 1px solid rgba(50, 21, 46, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.initiative-editorial-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-champagne-gold);
+}
+
+.initiative-marker-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.initiative-icon-spark {
+  color: var(--color-champagne-gold);
+  font-size: 1.1rem;
+}
+
+.initiative-context-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-champagne-gold);
+}
+
+.initiative-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.initiative-note {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   9. MEDIA, PUBLICATIONS & SPEAKING
+   ========================================= */
+.speaking-section {
+  padding: 8rem 0;
+  background-color: var(--color-warm-ivory);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.speaking-editorial-card {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 4.5rem 3.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.speaking-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.speaking-items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.speaking-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.speaking-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-warm-ivory);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.speaking-gold-icon {
+  color: var(--color-champagne-gold);
+}
+
+.speaking-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.speaking-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 0.45rem;
+}
+
+.speaking-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+
+.speaking-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.speaking-desc strong {
+  color: var(--color-deep-plum);
+}
+
+/* =========================================
+   10. ACADEMIC QUALIFICATIONS
+   ========================================= */
+.qualifications-section {
+  padding: 8rem 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.qualifications-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 5rem;
+}
+
+.qualifications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.qualification-card {
+  background: var(--color-warm-ivory);
+  border: 1px solid rgba(50, 21, 46, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 2.25rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.qualification-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-champagne-gold);
+}
+
+.qual-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.qual-type-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-champagne-gold);
+}
+
+.qual-icon {
+  color: var(--color-champagne-gold);
+}
+
+.qual-degree-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.3;
+  margin-bottom: 0.65rem;
+}
+
+.qual-institution-line {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* =========================================
+   11. LEADERSHIP PHILOSOPHY
+   ========================================= */
+.philosophy-reflection-section {
+  padding: 8rem 0;
+  background-color: var(--color-warm-ivory);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.philosophy-reflection-card {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4.5rem 3.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.philosophy-reflection-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  margin-bottom: 1.75rem;
+}
+
+.philosophy-reflection-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  line-height: 1.7;
+  color: #423b41;
+  font-style: italic;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   12. CALL TO ACTION SECTION
+   ========================================= */
+.leadership-cta-section {
+  padding: 7.5rem 0;
+  background-color: var(--color-warm-ivory);
+}
+
+.leadership-cta-box {
+  position: relative;
+  background: linear-gradient(135deg, #32152E 0%, #1F0B1D 100%);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 5.5rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(50, 21, 46, 0.2);
+}
+
+.cta-ambient-halo {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(198, 161, 91, 0.2) 0%, transparent 70%);
+  filter: blur(25px);
+  pointer-events: none;
+}
+
+.cta-content-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.cta-gold-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.cta-main-title {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  color: var(--color-warm-ivory);
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.cta-subtitle-text {
+  color: rgba(248, 243, 236, 0.85);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.75rem;
+}
+
+.cta-actions-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn-art {
+  padding: 1rem 2.2rem;
+}
+
+.cta-btn-exhibitions {
+  padding: 1rem 2.2rem;
+}
+
+.cta-btn-arrow {
+  color: var(--color-champagne-gold);
+  transition: transform var(--transition-fast);
+}
+
+.cta-btn-art:hover .cta-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================= */
+@media (max-width: 1024px) {
+  .leadership-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+
+  .leadership-hero-content {
+    align-items: center;
+  }
+
+  .leadership-hero-subtext {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .impact-focal-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .impact-highlight-badge {
+    text-align: left;
+  }
+
+  .healthcare-grid,
+  .community-grid,
+  .initiatives-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .speaking-items-grid,
+  .qualifications-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .leadership-hero-section {
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .leadership-hero-headline {
+    font-size: 2.35rem;
+  }
+
+  .leadership-portrait-frame {
+    max-width: 340px;
+  }
+
+  .leadership-sanctuary-inner {
+    height: 320px;
+  }
+
+  .leadership-profile-section,
+  .healthcare-section,
+  .governance-section,
+  .community-section,
+  .initiatives-section,
+  .speaking-section,
+  .qualifications-section,
+  .philosophy-reflection-section,
+  .leadership-cta-section {
+    padding: 5rem 0;
+  }
+
+  .social-impact-section {
+    padding: 6rem 0;
+  }
+
+  .social-impact-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .impact-huge-number {
+    font-size: 3.8rem;
+  }
+
+  .governance-item {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .speaking-editorial-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .philosophy-reflection-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .leadership-cta-box {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .cta-actions-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-btn-art,
+  .cta-btn-exhibitions {
+    width: 100%;
+  }
+}
