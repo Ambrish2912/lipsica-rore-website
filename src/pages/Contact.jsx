@@ -46,6 +46,11 @@ export default function Contact() {
       setErrorMessage('Please fill in all required fields (Name, Email, and Message).');
       return;
     }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
     setFormSubmitted(true);
   };
 

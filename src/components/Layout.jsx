@@ -5,10 +5,12 @@ import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
 import BackToTop from './BackToTop';
 import useScrollReveal from '../hooks/useScrollReveal';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function Layout() {
   const location = useLocation();
   useScrollReveal();
+  usePageMeta();
 
   return (
     <>

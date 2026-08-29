@@ -1,26 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Award, CheckCircle2, Building2, BookOpen, Mic, GraduationCap } from 'lucide-react';
 import AnimatedCounter from '../components/AnimatedCounter';
 import './Leadership.css';
 
 export default function Leadership() {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const directorships = [
     {
       role: 'Director',
       organization: 'Xcellon Industries Limited',
-      note: 'Corporate governance and strategic oversight',
+      note: 'Corporate governance and strategic oversight.',
     },
     {
       role: 'Director',
       organization: 'Gujarat Social Welfare Trust',
-      note: 'Institutional social development and program strategy',
+      note: 'Institutional social development and state-level community programs.',
     },
     {
       role: 'Board Member',
       organization: 'NISPA',
       sub: 'Network of Independent Schools Parents Association',
-      note: 'Governance, regional membership, and parent community advocacy',
+      note: 'Governance, regional membership, and parent community advocacy.',
     },
   ];
 
@@ -35,7 +50,7 @@ export default function Leadership() {
       role: 'Board Member & Co-Chair, Membership',
       organization: 'NISPA',
       period: '2023–Present',
-      description: 'Overseeing membership development, independent school community networking, and outreach.',
+      description: 'Overseeing membership development, independent school community networking, and regional outreach.',
     },
     {
       role: 'Director, Junior Tennis Program',
@@ -49,28 +64,65 @@ export default function Leadership() {
       period: '2005–2008',
       description: 'Spearheading women empowerment programs and state-wide community self-help groups.',
     },
+    {
+      role: 'Founder',
+      organization: 'Niagara Art Contest (NPMC Initiative)',
+      period: 'Civic Initiative',
+      description: 'Recognized by the Mayor of Niagara-on-the-Lake for fostering youth and community arts engagement.',
+    },
   ];
 
   const communityInitiatives = [
     {
-      title: 'Niagara Art Contest',
-      context: 'NPMC Initiative • Founder',
-      note: 'Recognized by the Mayor of Niagara-on-the-Lake for fostering youth and community arts engagement.',
+      title: 'Hosted NSPA Welcome Breakfast',
+      period: '2025',
+      context: 'Host & Lead Organizer',
+      note: 'Welcoming independent school parent delegates and fostering regional community connection.',
     },
     {
-      title: 'NSPA Welcome Breakfast',
-      context: 'Host & Lead Organizer • 2025',
-      note: 'Welcoming independent school parent delegates and fostering inter-school connection.',
-    },
-    {
-      title: 'Community Recipe Book',
-      context: 'Multi-Family Cultural Initiative • Initiator',
+      title: 'Initiated Community Recipe Book',
+      period: 'Living Archive',
+      context: 'Multi-Family Initiative',
       note: 'A collaborative living archive celebrating diverse family heritages and culinary traditions.',
     },
     {
-      title: 'Family Bowling & Appreciation Event',
-      context: 'Organizer • May 2026',
-      note: 'Community appreciation and cross-generational bonding event.',
+      title: 'Organized Family Bowling & Appreciation Event',
+      period: 'May 2026',
+      context: 'Community Gathering',
+      note: 'Cross-generational connection gathering celebrating parent and school community appreciation.',
+    },
+    {
+      title: 'Founder — Niagara Art Contest',
+      period: 'NPMC Initiative',
+      context: 'Youth Arts Recognition',
+      note: 'Recognized by the Mayor of Niagara-on-the-Lake for inspiring local artistic engagement.',
+    },
+  ];
+
+  const leadershipTimeline = [
+    {
+      period: '2005–2008',
+      role: 'Director',
+      organization: 'Gujarat Social Welfare Trust',
+      focus: 'Women Empowerment & Sakhi Mandal Initiative',
+    },
+    {
+      period: '2020–2022',
+      role: 'Director, Junior Tennis Program',
+      organization: 'Fort Erie Tennis Club',
+      focus: 'Youth Athletics & Player Development',
+    },
+    {
+      period: '2023–Present',
+      role: 'Board Member & Co-Chair, Membership',
+      organization: 'NISPA',
+      focus: 'Network Governance & Membership Strategy',
+    },
+    {
+      period: '2025–2026',
+      role: 'President',
+      organization: 'Ridley College Family Guild',
+      focus: 'Guild Leadership & Parent Community Engagement',
     },
   ];
 
@@ -79,32 +131,38 @@ export default function Leadership() {
       title: 'Master’s in Physiotherapy (Orthopedics)',
       type: 'POSTGRADUATE DEGREE',
       focus: 'Advanced Musculoskeletal & Clinical Rehabilitation',
+      institution: 'Master’s Level',
     },
     {
       title: 'Bachelor’s in Physiotherapy',
       type: 'UNDERGRADUATE DEGREE',
       focus: 'Clinical Physical Therapy & Human Anatomy',
+      institution: 'Bachelor’s Level',
     },
     {
       title: 'Degree in Hospital Administration & Healthcare Management',
       type: 'EXECUTIVE QUALIFICATION',
       focus: 'Healthcare Operations & Institutional Leadership',
+      institution: 'Professional Qualification',
     },
     {
       title: 'Certification — Art of Rhetoric: Persuasive Communication',
       type: 'EXECUTIVE CERTIFICATE',
-      focus: 'Harvard University',
+      focus: 'Persuasive Communication & Executive Speech',
+      institution: 'Harvard University',
     },
     {
       title: 'Pursuing — Negotiation & Leadership',
       type: 'EXECUTIVE EDUCATION (IN PROGRESS)',
-      focus: 'Yale University',
+      focus: 'Executive Negotiation & Strategic Leadership',
+      institution: 'Yale University',
+      isPursuing: true,
     },
   ];
 
   return (
     <div className="leadership-page">
-      {/* 1. PAGE HERO */}
+      {/* 1. HERO SECTION (Compact, Editorial, With Scroll Cue) */}
       <section className="leadership-hero-section" aria-label="Leadership Hero">
         <div className="leadership-hero-ambient"></div>
         <div className="container">
@@ -121,7 +179,7 @@ export default function Leadership() {
               </h1>
 
               <p className="leadership-hero-subtext hero-reveal-subtext">
-                “A multidisciplinary journey across healthcare, entrepreneurship, social development, governance, and community leadership.”
+                “An evolving journey across healthcare, entrepreneurship, social development, governance and community leadership.”
               </p>
 
               <div className="leadership-hero-location hero-reveal-meta">
@@ -130,7 +188,7 @@ export default function Leadership() {
               </div>
             </div>
 
-            {/* Right Column: Editorial Visual Frame */}
+            {/* Right Column: Editorial Visual Frame (Ready for portrait) */}
             <div className="leadership-hero-visual hero-reveal-visual">
               <div className="leadership-portrait-frame">
                 <div className="leadership-sanctuary-inner">
@@ -153,38 +211,57 @@ export default function Leadership() {
               </div>
             </div>
           </div>
+
+          {/* Subtle Scroll Cue */}
+          <div
+            className={`leadership-scroll-cue ${hasScrolled ? 'scrolled-hidden' : ''}`}
+            aria-hidden="true"
+          >
+            <span className="scroll-cue-text">EXPLORE IMPACT</span>
+            <span className="scroll-cue-arrow">&darr;</span>
+          </div>
         </div>
       </section>
 
-      {/* 2. PROFILE / POSITIONING */}
+      {/* 2. PROFILE STATEMENT (A Multidisciplinary Leader) */}
       <section className="leadership-profile-section" aria-label="A Multidisciplinary Leader">
         <div className="container">
-          <div className="profile-editorial-card">
+          <div className="profile-editorial-statement reveal-on-scroll">
             <span className="section-gold-eyebrow">EXECUTIVE &amp; CIVIC PROFILE</span>
-            <h2 className="profile-serif-heading">A Multidisciplinary Leader</h2>
-            <blockquote className="profile-lead-statement">
-              “Multidisciplinary leader with demonstrated impact across healthcare, business, social development, governance, and the arts. Proven ability to build, scale, and lead initiatives at community, institutional, and international levels, with a strong focus on execution, sustainability, and measurable outcomes.”
+            <h2 className="profile-statement-heading">A Multidisciplinary Leader</h2>
+            <blockquote className="profile-large-statement">
+              “Multidisciplinary leader with demonstrated impact across healthcare, business, social development, governance, and the arts.”
             </blockquote>
+            <p className="profile-supporting-p">
+              Proven ability to build, scale, and lead initiatives at community, institutional, and international levels, with a strong focus on execution, sustainability, and measurable outcomes.
+            </p>
             <div className="profile-gold-divider"></div>
           </div>
         </div>
       </section>
 
-      {/* 3 & 8. SOCIAL IMPACT & WOMEN'S EMPOWERMENT (Deep Plum Sanctuary) */}
-      <section className="social-impact-section" aria-label="Social Impact and Sakhi Mandal">
+      {/* 3. 30,000+ IMPACT SECTION (Visual Centerpiece in Deep Plum) */}
+      <section className="social-impact-section" aria-label="30,000+ Women Empowered">
         <div className="social-impact-glow"></div>
         <div className="container">
-          <div className="social-impact-card">
+          <div className="social-impact-card reveal-on-scroll">
             <div className="impact-header-row">
               <span className="impact-gold-tag">SOCIAL IMPACT</span>
               <span className="impact-state-tag">GUJARAT, INDIA</span>
             </div>
 
             <div className="impact-focal-layout">
-              {/* Left Column: 30,000+ Metric Focus */}
+              {/* Left Column: 30,000+ Metric Focus with Organic Gold Motif */}
               <div className="impact-metric-column">
+                <div className="impact-motif-backdrop" aria-hidden="true">
+                  <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="impact-radial-svg">
+                    <circle cx="120" cy="120" r="110" stroke="#C6A15B" strokeWidth="0.8" opacity="0.3" strokeDasharray="4 6" />
+                    <circle cx="120" cy="120" r="85" stroke="#B9828F" strokeWidth="0.9" opacity="0.35" />
+                    <circle cx="120" cy="120" r="55" stroke="#C6A15B" strokeWidth="1" opacity="0.4" />
+                  </svg>
+                </div>
                 <AnimatedCounter target={30000} suffix="+" duration={1800} className="impact-huge-number" />
-                <span className="impact-huge-label">Women Empowered</span>
+                <span className="impact-huge-label">WOMEN EMPOWERED</span>
                 <span className="impact-huge-sub">Through the Sakhi Mandal Initiative (GSWT)</span>
               </div>
 
@@ -192,15 +269,15 @@ export default function Leadership() {
               <div className="impact-narrative-column">
                 <div className="impact-passage-block">
                   <h3 className="impact-narrative-title">Empowering Women Through Action</h3>
-                  <p className="impact-narrative-p">
+                  <blockquote className="impact-quote-highlight">
                     “Empowered 30,000+ women through structured self-help group programs.”
-                  </p>
+                  </blockquote>
                   <p className="impact-narrative-p">
                     “A community-centered initiative focused on structured self-help and empowerment.”
                   </p>
                   <div className="impact-highlight-badge">
                     <CheckCircle2 size={16} className="badge-check-icon" />
-                    <span>Recognized as a pilot project for women empowerment in Gujarat, India.</span>
+                    <span>The initiative was recognized as a pilot project for women empowerment in Gujarat, India.</span>
                   </div>
                 </div>
               </div>
@@ -211,10 +288,10 @@ export default function Leadership() {
         </div>
       </section>
 
-      {/* 4. HEALTHCARE & ENTREPRENEURSHIP */}
+      {/* 4. HEALTHCARE & ENTREPRENEURSHIP (Asymmetric Editorial Layout) */}
       <section className="healthcare-section" aria-label="Healthcare and Entrepreneurship">
         <div className="container">
-          <div className="healthcare-header-block">
+          <div className="healthcare-header-block reveal-on-scroll">
             <span className="section-gold-eyebrow">CLINICAL &amp; ENTERPRISE</span>
             <h2 className="section-serif-title">Healthcare &amp; Entrepreneurship</h2>
             <p className="healthcare-subtitle">
@@ -222,33 +299,38 @@ export default function Leadership() {
             </p>
           </div>
 
-          <div className="healthcare-grid">
-            {/* Left Card: Clinical Enterprise */}
-            <div className="healthcare-card">
+          <div className="healthcare-asymmetric-grid">
+            {/* Left Dominant Card: Clinical Enterprise */}
+            <div className="healthcare-card dominant-card reveal-on-scroll">
               <div className="card-top-icon">
                 <Building2 size={24} className="card-icon-gold" />
               </div>
-              <span className="card-category-tag">CLINICAL PRACTICE</span>
+              <span className="card-category-tag">CLINICAL PRACTICE &amp; FOUNDERSHIP</span>
               <h3 className="healthcare-card-title">Founder &amp; Business Owner</h3>
               <p className="healthcare-card-org">Multi-specialty Physiotherapy Clinics (India)</p>
               
               <div className="healthcare-spec-badge">
                 <span className="spec-dot">&bull;</span>
-                <span>Clinical Specialization: <strong>Orthopaedic Musculoskeletal</strong></span>
+                <span>Clinical Specialization: <strong>Orthopaedic musculoskeletal</strong></span>
               </div>
 
               <p className="healthcare-card-body">
-                Founded and directed clinical facilities specializing in rehabilitation, movement therapy, and patient-centered musculoskeletal recovery.
+                Founded and directed multi-specialty clinical facilities specializing in orthopaedic musculoskeletal rehabilitation, movement therapy, and patient-centered recovery.
               </p>
+
+              <div className="academic-reference-pills">
+                <span className="academic-pill">Master’s in Physiotherapy (Orthopedics)</span>
+                <span className="academic-pill">Bachelor’s in Physiotherapy</span>
+              </div>
             </div>
 
             {/* Right Card: Hospital Administration */}
-            <div className="healthcare-card">
+            <div className="healthcare-card supportive-card reveal-on-scroll">
               <div className="card-top-icon">
                 <Award size={24} className="card-icon-gold" />
               </div>
-              <span className="card-category-tag">INSTITUTIONAL GOVERNANCE</span>
-              <h3 className="healthcare-card-title">Hospital Administration</h3>
+              <span className="card-category-tag">INSTITUTIONAL LEADERSHIP</span>
+              <h3 className="healthcare-card-title">Experience in Hospital Administration</h3>
               <p className="healthcare-card-org">Apollo Hospital, India</p>
 
               <div className="healthcare-spec-badge">
@@ -257,17 +339,21 @@ export default function Leadership() {
               </div>
 
               <p className="healthcare-card-body">
-                Delivered hospital administrative and operational oversight, aligning multidisciplinary care teams with stringent healthcare management standards.
+                Delivered hospital administrative and operational oversight, managing clinical operations, multidisciplinary coordination, and care protocols.
               </p>
+
+              <div className="academic-reference-pills">
+                <span className="academic-pill">Degree in Hospital Administration &amp; Healthcare Management</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. GOVERNANCE & DIRECTORSHIPS */}
+      {/* 5. GOVERNANCE & DIRECTORSHIPS (Editorial List with Fine Gold Lines) */}
       <section className="governance-section" aria-label="Governance and Directorships">
         <div className="container">
-          <div className="governance-wrapper">
+          <div className="governance-wrapper reveal-on-scroll">
             <div className="governance-header">
               <span className="section-gold-eyebrow">FIDUCIARY &amp; BOARD OVERSIGHT</span>
               <h2 className="section-serif-title">Governance &amp; Directorships</h2>
@@ -285,7 +371,7 @@ export default function Leadership() {
                       <span className="gov-sep">—</span>
                       <h3 className="gov-org">{d.organization}</h3>
                     </div>
-                    {d.sub && <p className="gov-sub">{d.sub}</p>}
+                    {d.sub && <p className="gov-sub">({d.sub})</p>}
                     <p className="gov-note">{d.note}</p>
                   </div>
                   <div className="gov-gold-dash"></div>
@@ -299,7 +385,7 @@ export default function Leadership() {
       {/* 6. COMMUNITY LEADERSHIP */}
       <section className="community-section" aria-label="Community Leadership Roles">
         <div className="container">
-          <div className="community-header">
+          <div className="community-header reveal-on-scroll">
             <span className="section-gold-eyebrow">CIVIC ENGAGEMENT</span>
             <h2 className="section-serif-title">Community Leadership</h2>
             <p className="community-subtitle">Active board stewardship and regional civic leadership.</p>
@@ -307,7 +393,7 @@ export default function Leadership() {
 
           <div className="community-grid">
             {communityRoles.map((role, idx) => (
-              <div key={idx} className="community-card">
+              <div key={idx} className="community-card reveal-on-scroll">
                 <div className="community-card-header">
                   <span className="community-period-badge">{role.period}</span>
                   <span className="community-index">0{idx + 1}</span>
@@ -322,10 +408,10 @@ export default function Leadership() {
         </div>
       </section>
 
-      {/* 7. SELECT COMMUNITY INITIATIVES: BUILDING COMMUNITY */}
+      {/* 7. COMMUNITY INITIATIVES (Building Community) */}
       <section className="initiatives-section" aria-label="Building Community Initiatives">
         <div className="container">
-          <div className="initiatives-header">
+          <div className="initiatives-header reveal-on-scroll">
             <span className="section-gold-eyebrow">LOCAL ADVOCACY</span>
             <h2 className="section-serif-title">Building Community</h2>
             <p className="initiatives-subtitle">Grassroots cultural, family, and educational initiatives.</p>
@@ -333,10 +419,10 @@ export default function Leadership() {
 
           <div className="initiatives-grid">
             {communityInitiatives.map((item, idx) => (
-              <div key={idx} className="initiative-editorial-card">
+              <div key={idx} className="initiative-editorial-card reveal-on-scroll">
                 <div className="initiative-marker-row">
                   <span className="initiative-icon-spark">&#10022;</span>
-                  <span className="initiative-context-tag">{item.context}</span>
+                  <span className="initiative-context-tag">{item.period}</span>
                 </div>
                 <h3 className="initiative-title">{item.title}</h3>
                 <p className="initiative-note">{item.note}</p>
@@ -346,10 +432,42 @@ export default function Leadership() {
         </div>
       </section>
 
-      {/* 9. COMMUNICATION & PUBLIC SPEAKING */}
+      {/* 8. LEADERSHIP TIMELINE (Refined Chronology) */}
+      <section className="leadership-timeline-section" aria-label="Leadership Timeline">
+        <div className="container">
+          <div className="lead-timeline-header reveal-on-scroll">
+            <span className="section-gold-eyebrow">CHRONOLOGY</span>
+            <h2 className="section-serif-title">Leadership Journey Through Time</h2>
+          </div>
+
+          <div className="lead-timeline-container reveal-on-scroll">
+            <div className="lead-timeline-spine"></div>
+            <div className="lead-timeline-list">
+              {leadershipTimeline.map((item, idx) => (
+                <div key={idx} className="lead-timeline-item">
+                  <div className="lead-timeline-period">
+                    <span className="period-year-text">{item.period}</span>
+                  </div>
+                  <div className="lead-timeline-dot">
+                    <span className="dot-halo"></span>
+                    <span className="dot-core"></span>
+                  </div>
+                  <div className="lead-timeline-content">
+                    <h3 className="lead-timeline-role">{item.role}</h3>
+                    <p className="lead-timeline-org">{item.organization}</p>
+                    <p className="lead-timeline-focus">{item.focus}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. MEDIA & SPEAKING (Media, Publications & Speaking) */}
       <section className="speaking-section" aria-label="Media, Publications and Speaking">
         <div className="container">
-          <div className="speaking-editorial-card">
+          <div className="speaking-editorial-card reveal-on-scroll">
             <div className="speaking-header">
               <span className="section-gold-eyebrow">THOUGHT LEADERSHIP</span>
               <h2 className="section-serif-title">Media, Publications &amp; Speaking</h2>
@@ -375,9 +493,9 @@ export default function Leadership() {
                 </div>
                 <div className="speaking-content">
                   <span className="speaking-label">WRITTEN CONTRIBUTIONS</span>
-                  <h3 className="speaking-name">Published Author</h3>
+                  <h3 className="speaking-name">Published Articles</h3>
                   <p className="speaking-desc">
-                    Published articles on <strong>Alternative Therapies</strong> and holistic restorative modalities.
+                    Published articles on <strong>Alternative Therapies</strong> and holistic health modalities.
                   </p>
                 </div>
               </div>
@@ -390,7 +508,7 @@ export default function Leadership() {
                   <span className="speaking-label">KEYNOTE &amp; LECTURES</span>
                   <h3 className="speaking-name">Speaker — Health Series Gujarat</h3>
                   <p className="speaking-desc">
-                    Keynote lecture on <strong>Ergonomics, posture and cervical spondylitis</strong>.
+                    Keynote lectures on <strong>Ergonomics, posture and cervical spondylitis</strong>.
                   </p>
                 </div>
               </div>
@@ -402,43 +520,49 @@ export default function Leadership() {
       {/* 10. ACADEMIC & PROFESSIONAL QUALIFICATIONS */}
       <section className="qualifications-section" aria-label="Academic and Professional Qualifications">
         <div className="container">
-          <div className="qualifications-header">
+          <div className="qualifications-header reveal-on-scroll">
             <span className="section-gold-eyebrow">EDUCATION &amp; CREDENTIALS</span>
             <h2 className="section-serif-title">Academic &amp; Professional Qualifications</h2>
           </div>
 
           <div className="qualifications-grid">
             {qualifications.map((q, idx) => (
-              <div key={idx} className="qualification-card">
+              <div key={idx} className={`qualification-card ${q.isPursuing ? 'pursuing-card' : ''} reveal-on-scroll`}>
                 <div className="qual-top-row">
-                  <span className="qual-type-tag">{q.type}</span>
+                  <span className={`qual-type-tag ${q.isPursuing ? 'tag-pursuing' : ''}`}>{q.type}</span>
                   <GraduationCap size={16} className="qual-icon" />
                 </div>
                 <h3 className="qual-degree-title">{q.title}</h3>
                 <p className="qual-institution-line">{q.focus}</p>
+                <span className="qual-school-badge">{q.institution}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 11. LEADERSHIP PHILOSOPHY */}
-      <section className="philosophy-reflection-section" aria-label="Leadership With Purpose">
+      {/* 11. ART + LEADERSHIP CONNECTION (Beyond the Canvas) */}
+      <section className="philosophy-reflection-section" aria-label="Beyond the Canvas Integration">
         <div className="container">
-          <div className="philosophy-reflection-card">
+          <div className="philosophy-reflection-card reveal-on-scroll">
             <span className="section-gold-eyebrow">INTEGRATIVE PRACTICE</span>
-            <h2 className="philosophy-reflection-title">Leadership With Purpose</h2>
+            <h2 className="philosophy-reflection-title">Beyond the Canvas</h2>
             <blockquote className="philosophy-reflection-quote">
-              “Experience spanning healthcare enterprises, nonprofit leadership, governance roles, and international creative practice, with a consistent track record of building high-impact, scalable initiatives.”
+              “Healthcare, community leadership, governance and creative practice exist alongside one another within Lipsica Rore’s multidisciplinary journey.”
             </blockquote>
+            <div className="philosophy-gold-connector" aria-hidden="true">
+              <span className="connector-line"></span>
+              <span className="connector-spark">&#10022;</span>
+              <span className="connector-line"></span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 12. FINAL CALL TO ACTION (Deep Plum Sanctuary) */}
+      {/* 12. FINAL CALL TO ACTION (Explore the Creative Journey) */}
       <section className="leadership-cta-section" aria-label="Explore the Creative Journey CTA">
         <div className="container">
-          <div className="leadership-cta-box">
+          <div className="leadership-cta-box reveal-on-scroll">
             <div className="cta-ambient-halo"></div>
             <div className="cta-content-wrapper">
               <span className="cta-gold-tag">CONTINUE THE EXPLORATION</span>
@@ -448,12 +572,13 @@ export default function Leadership() {
               </p>
 
               <div className="cta-actions-group">
-                <Link to="/media" className="btn btn-primary cta-btn-art">
-                  <span>VIEW MEDIA &amp; RECOGNITION</span>
+                <Link to="/art" className="btn btn-primary cta-btn-art">
+                  <span>EXPLORE THE ART</span>
                   <ArrowRight size={15} className="cta-btn-arrow" />
                 </Link>
-                <Link to="/cv" className="btn btn-secondary-light cta-btn-exhibitions">
-                  <span>EXPLORE COMPLETE CV</span>
+                <Link to="/exhibitions" className="btn btn-secondary-light cta-btn-exhibitions">
+                  <span>VIEW EXHIBITIONS</span>
+                  <ArrowRight size={15} className="cta-btn-arrow" />
                 </Link>
               </div>
             </div>

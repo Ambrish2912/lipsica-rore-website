@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Newspaper } from 'lucide-react';
 import './Exhibitions.css';
 
 export default function Exhibitions() {
   const [activeEraFilter, setActiveEraFilter] = useState('all');
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  // Scroll cue visibility tracking
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Master Exhibition Archive Data Structure
   const exhibitionsData = [
@@ -16,6 +31,7 @@ export default function Exhibitions() {
       venue: 'Exhibition Super Fair 2026',
       location: 'Brooklyn, USA',
       era: 'recent',
+      eraLabel: 'RECENT WORK (2026–2024)',
       isLatest: true,
     },
     {
@@ -26,6 +42,7 @@ export default function Exhibitions() {
       venue: 'Southampton Art Exhibition',
       location: 'USA',
       era: 'recent',
+      eraLabel: 'RECENT WORK (2026–2024)',
     },
     {
       id: 'ex-2025-muza-inner-voice',
@@ -35,6 +52,7 @@ export default function Exhibitions() {
       venue: 'Art on Wheels',
       location: 'Niagara Falls, USA',
       era: 'recent',
+      eraLabel: 'RECENT WORK (2026–2024)',
     },
     {
       id: 'ex-2024-introspection',
@@ -44,6 +62,7 @@ export default function Exhibitions() {
       venue: 'Art on Wheels',
       location: 'Niagara Falls, USA',
       era: 'recent',
+      eraLabel: 'RECENT WORK (2026–2024)',
     },
     {
       id: 'ex-2024-reflections',
@@ -53,6 +72,7 @@ export default function Exhibitions() {
       venue: 'Art on Wheels',
       location: 'Niagara Falls, USA',
       era: 'recent',
+      eraLabel: 'RECENT WORK (2026–2024)',
     },
     {
       id: 'ex-2023-lundys',
@@ -62,6 +82,7 @@ export default function Exhibitions() {
       venue: 'Lundy’s Manor',
       location: 'Niagara Falls, Canada',
       era: 'healing-dimensions',
+      eraLabel: 'HEALING & REFLECTION (2023)',
     },
     {
       id: 'ex-2023-white-oaks',
@@ -71,6 +92,7 @@ export default function Exhibitions() {
       venue: 'White Oaks',
       location: 'Niagara-on-the-Lake, Canada',
       era: 'healing-dimensions',
+      eraLabel: 'HEALING & REFLECTION (2023)',
     },
     {
       id: 'ex-2012-ahmedabad',
@@ -80,6 +102,7 @@ export default function Exhibitions() {
       venue: 'Ahmedabad Art Gallery',
       location: 'India',
       era: 'earlier',
+      eraLabel: 'EARLIER WORK (2012–2009)',
     },
     {
       id: 'ex-2009-healing-earth',
@@ -90,14 +113,15 @@ export default function Exhibitions() {
       location: 'Ahmedabad, India',
       mediaCoverage: 'Ahmedabad Mirror',
       era: 'earlier',
+      eraLabel: 'EARLIER WORK (2012–2009)',
     },
   ];
 
   const eraGroups = [
     { key: 'all', label: 'All Exhibitions' },
-    { key: 'recent', label: '2026–2024 Recent Work' },
-    { key: 'healing-dimensions', label: '2023 Healing Dimensions' },
-    { key: 'earlier', label: '2012–2009 Earlier Works' },
+    { key: 'recent', label: 'Recent Work (2026–2024)' },
+    { key: 'healing-dimensions', label: 'Healing & Reflection (2023)' },
+    { key: 'earlier', label: 'Earlier Work (2012–2009)' },
   ];
 
   const filteredExhibitions = activeEraFilter === 'all'
@@ -118,7 +142,7 @@ export default function Exhibitions() {
 
   return (
     <div className="exhibitions-page">
-      {/* 1. PAGE HERO */}
+      {/* 1. PAGE HERO (Refined, Compact, With Disappearing Scroll Cue) */}
       <section className="exhibitions-hero-section" aria-label="Exhibitions Archive Introduction">
         <div className="exhibitions-hero-ambient"></div>
         <div className="container">
@@ -138,34 +162,68 @@ export default function Exhibitions() {
 
             <div className="exhibitions-geography-pill hero-reveal-meta">
               <MapPin size={14} className="geography-pin-icon" />
-              <span>India &bull; Canada &bull; United States</span>
+              <span>INDIA &bull; CANADA &bull; UNITED STATES</span>
             </div>
           </div>
         </div>
+
+        {/* Subtle Scroll Cue */}
+        <div
+          className={`hero-scroll-cue ${hasScrolled ? 'scrolled-hidden' : ''}`}
+          aria-hidden="true"
+        >
+          <span className="scroll-cue-text">EXPLORE THE JOURNEY</span>
+          <span className="scroll-cue-arrow">&darr;</span>
+        </div>
       </section>
 
-      {/* 2. LATEST EXHIBITION (Deep Plum Milestone Showcase) */}
+      {/* 2. LATEST EXHIBITION (Visually Dominant Asymmetric Deep Plum Showcase) */}
       <section className="latest-showcase-section" aria-label="Latest Exhibition Feature">
+        <div className="latest-transition-divider" aria-hidden="true">
+          <div className="transition-line-accent"></div>
+        </div>
+
         <div className="latest-showcase-glow"></div>
         <div className="container">
           <div className="latest-exhibition-card">
-            <div className="latest-badge-row">
-              <span className="latest-status-tag">LATEST EXHIBITION</span>
-              <span className="latest-year-display">{latestExhibition.year}</span>
-            </div>
-
+            {/* Asymmetric Composition */}
             <div className="latest-card-content">
-              <div className="latest-info-side">
-                <h2 className="latest-exhibition-title">{latestExhibition.title}</h2>
-                <p className="latest-event-name">{latestExhibition.venue}</p>
-                <p className="latest-location-line">{latestExhibition.location}</p>
+              {/* Left Asymmetric Side: Big 2026 & Status Badge */}
+              <div className="latest-year-column">
+                <div className="latest-badge-row">
+                  <span className="latest-status-tag">LATEST EXHIBITION</span>
+                </div>
+                <span className="latest-dominant-year">2026</span>
+                
+                {/* Decorative Sacred Geometry Motif */}
+                <div className="latest-muza-motif" aria-hidden="true">
+                  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="latest-motif-svg">
+                    <circle cx="60" cy="60" r="50" stroke="#C6A15B" strokeWidth="0.8" opacity="0.35" strokeDasharray="3 5" />
+                    <circle cx="60" cy="60" r="35" stroke="#B9828F" strokeWidth="0.9" opacity="0.4" />
+                    <circle cx="60" cy="60" r="4" fill="#C6A15B" />
+                  </svg>
+                </div>
               </div>
 
-              <div className="latest-context-side">
-                <span className="latest-context-label">NEWEST MILESTONE</span>
+              {/* Right Asymmetric Side: Title, Venue, Location */}
+              <div className="latest-details-column">
+                <div className="latest-title-row">
+                  <h2 className="latest-exhibition-title">{latestExhibition.title}</h2>
+                  <div className="latest-title-underline"></div>
+                </div>
+
+                <div className="latest-event-meta">
+                  <p className="latest-event-name">{latestExhibition.venue}</p>
+                  <p className="latest-location-line">
+                    <MapPin size={14} className="latest-pin-icon" />
+                    <span>{latestExhibition.location}</span>
+                  </p>
+                </div>
+
                 <p className="latest-context-text">
                   Presenting the intuitive series <em>Muza</em> at the contemporary Exhibition Super Fair in Brooklyn, New York.
                 </p>
+
                 <Link to="/contact" className="btn btn-gold-ghost latest-inquire-btn">
                   <span>INQUIRE ABOUT THIS SHOW</span>
                   <ArrowRight size={15} />
@@ -205,7 +263,7 @@ export default function Exhibitions() {
           </div>
 
           {/* Gallery Museum Timeline */}
-          <div className="gallery-timeline-container">
+          <div className="gallery-timeline-container reveal-on-scroll">
             <div className="timeline-spine-line" aria-hidden="true"></div>
 
             <div className="timeline-entries-list">
@@ -228,7 +286,7 @@ export default function Exhibitions() {
                     <span className="node-center-dot"></span>
                   </div>
 
-                  {/* Content Exhibition Showcase Card */}
+                  {/* Content Exhibition Showcase */}
                   <div className="timeline-details-block">
                     <article className="timeline-exhibition-card">
                       {exhibition.isLatest && (
@@ -269,13 +327,13 @@ export default function Exhibitions() {
         </div>
       </section>
 
-      {/* 6. ARTISTIC EVOLUTION: FROM HEALING TO AWAKENING */}
+      {/* 6. ARTISTIC THREAD: FROM HEALING TO AWAKENING */}
       <section className="evolution-reflection-section" aria-label="Curatorial Reflection: From Healing to Awakening">
         <div className="container">
-          <div className="evolution-card-wrapper">
-            <span className="archive-gold-eyebrow">CURATORIAL REFLECTION</span>
+          <div className="evolution-card-wrapper reveal-on-scroll">
+            <span className="archive-gold-eyebrow">CURATORIAL OBSERVATION</span>
             <h2 className="evolution-title">From Healing to Awakening</h2>
-            
+
             <blockquote className="evolution-quote">
               “Across her exhibition history, recurring ideas of healing, introspection and the inner voice appear throughout Lipsica Rore’s work.”
             </blockquote>
@@ -284,7 +342,7 @@ export default function Exhibitions() {
               The continuous thread of healing and inner reflection reflects an artistic journey that began with elemental connection to the earth and has blossomed into the intuitive guidance of Muza.
             </p>
 
-            {/* Sequence of Exhibitions */}
+            {/* Sequence of Supported Exhibitions */}
             <div className="evolution-milestone-flow">
               {evolutionaryMilestones.map((item, i) => (
                 <div key={i} className="milestone-flow-item">
@@ -300,14 +358,14 @@ export default function Exhibitions() {
         </div>
       </section>
 
-      {/* 7. MEDIA COVERAGE SECTION */}
+      {/* 7. MEDIA SECTION */}
       <section className="media-spotlight-section" aria-label="Media Spotlight">
         <div className="container">
-          <div className="media-spotlight-card">
-            <span className="media-eyebrow-tag">MEDIA RECOGNITION</span>
-            <h3 className="media-spotlight-title">Documented Across Continents</h3>
+          <div className="media-spotlight-card reveal-on-scroll">
+            <span className="media-eyebrow-tag">MEDIA</span>
+            <h3 className="media-spotlight-title">Featured in Press</h3>
             <p className="media-spotlight-text">
-              Selected solo exhibitions and artistic contributions have been highlighted in prominent press coverage.
+              Selected solo exhibitions and artistic contributions have been documented in prominent press coverage.
             </p>
             <div className="media-outlet-badge">
               <Newspaper size={18} className="outlet-icon" />
@@ -317,25 +375,26 @@ export default function Exhibitions() {
         </div>
       </section>
 
-      {/* 8. EXHIBITION INQUIRY CTA (Deep Plum Sanctuary) */}
-      <section className="exhibition-cta-section" aria-label="Exhibition Inquiry CTA">
+      {/* 8. FINAL CTA (Continue the Journey) */}
+      <section className="exhibition-cta-section" aria-label="Continue the Journey">
         <div className="container">
-          <div className="exhibition-cta-box">
+          <div className="exhibition-cta-box reveal-on-scroll">
             <div className="cta-halo-glow"></div>
             <div className="cta-content-inner">
-              <span className="cta-gold-badge">GALLERY &bull; INQUIRIES</span>
-              <h2 className="cta-serif-title">Bring the Work Into Your Space</h2>
+              <span className="cta-gold-badge">CONTINUE THE JOURNEY</span>
+              <h2 className="cta-serif-title">Continue the Journey</h2>
               <p className="cta-lead-text">
-                For exhibition opportunities, collaborations, or gallery inquiries, connect with Lipsica Rore.
+                Explore the wider story behind the art, leadership and creative practice.
               </p>
 
               <div className="cta-actions-row">
                 <Link to="/leadership" className="btn btn-primary cta-btn-contact">
-                  <span>DISCOVER LEADERSHIP &amp; IMPACT</span>
+                  <span>LEADERSHIP &amp; IMPACT</span>
                   <ArrowRight size={15} className="cta-arrow" />
                 </Link>
                 <Link to="/contact" className="btn btn-secondary-light cta-btn-art">
-                  <span>GET IN TOUCH</span>
+                  <span>CONTACT LIPSICA</span>
+                  <ArrowRight size={15} className="cta-arrow" />
                 </Link>
               </div>
             </div>
