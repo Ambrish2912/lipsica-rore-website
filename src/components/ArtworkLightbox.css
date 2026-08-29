@@ -1,0 +1,414 @@
+/* Artwork Detail Modal / Lightbox Styles */
+
+.artwork-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(37, 15, 34, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  overflow-y: auto;
+  animation: lightboxFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.artwork-lightbox-panel {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  background: var(--color-warm-ivory);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(198, 161, 91, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: lightboxSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Lightbox Top Control Bar */
+.lightbox-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.75rem;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(50, 21, 46, 0.08);
+}
+
+.lightbox-series-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-dusty-rose);
+}
+
+.lightbox-index-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-deep-plum);
+  letter-spacing: 0.1em;
+}
+
+.index-divider {
+  color: var(--color-champagne-gold);
+  font-weight: 400;
+}
+
+.lightbox-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-deep-plum);
+  border: 1px solid rgba(50, 21, 46, 0.15);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-close-btn:hover {
+  background: var(--color-deep-plum);
+  color: var(--color-warm-ivory);
+  border-color: var(--color-deep-plum);
+  transform: rotate(90deg);
+}
+
+/* Main Grid */
+.lightbox-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 2.5rem;
+  padding: 2.25rem;
+  align-items: center;
+  max-height: calc(88vh - 70px);
+  overflow-y: auto;
+}
+
+/* Visual Presentation Side */
+.lightbox-visual-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-museum-frame {
+  width: 100%;
+  max-width: 440px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-gold);
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 12px 35px rgba(50, 21, 46, 0.12);
+}
+
+.lightbox-canvas-matting {
+  background: #FAF7F2;
+  padding: 0.75rem;
+  border: 1px solid rgba(50, 21, 46, 0.06);
+  border-radius: 2px;
+}
+
+.lightbox-canvas-viewport {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  background: #250F22;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-real-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lightbox-placeholder-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(150deg, #2A1024 0%, #3B1A35 45%, #522746 80%, #33112B 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lightbox-canvas-texture {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 65% 35%, rgba(198, 161, 91, 0.28) 0%, transparent 65%),
+              radial-gradient(circle at 30% 75%, rgba(185, 130, 143, 0.2) 0%, transparent 55%);
+}
+
+.lightbox-sacred-aura {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.lightbox-piece-svg {
+  width: 85%;
+  height: 85%;
+}
+
+.lightbox-seal-box {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  z-index: 3;
+}
+
+.lightbox-seal-series {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-champagne-gold);
+}
+
+.lightbox-seal-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-warm-ivory);
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-seal-year {
+  font-size: 0.72rem;
+  color: rgba(248, 243, 236, 0.75);
+}
+
+/* Details Side */
+.lightbox-details-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox-details-header {
+  margin-bottom: 1rem;
+}
+
+.lightbox-gold-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 0.35rem;
+}
+
+.lightbox-artwork-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 600;
+  color: var(--color-deep-plum);
+  line-height: 1.15;
+}
+
+.lightbox-artwork-description {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #4a4148;
+  margin-bottom: 1.75rem;
+}
+
+.lightbox-specs-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(50, 21, 46, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.lightbox-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 0.88rem;
+}
+
+.lightbox-spec-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-dusty-rose);
+  flex-shrink: 0;
+}
+
+.lightbox-spec-value {
+  color: var(--color-deep-plum);
+  font-weight: 600;
+  text-align: right;
+}
+
+.lightbox-spec-value.highlight-gold {
+  font-style: italic;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+}
+
+/* Actions Footer */
+.lightbox-actions-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.lightbox-inquire-btn {
+  padding: 0.85rem 1.75rem;
+  font-size: 0.82rem;
+}
+
+.lightbox-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lightbox-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-deep-plum);
+  padding: 0.65rem 1.15rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(50, 21, 46, 0.2);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--color-deep-plum);
+  color: var(--color-warm-ivory);
+  border-color: var(--color-deep-plum);
+}
+
+.lightbox-keyboard-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes lightboxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lightboxSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 839px) {
+  .artwork-lightbox-backdrop {
+    padding: 1rem;
+  }
+
+  .lightbox-main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 1.5rem;
+    max-height: calc(90vh - 65px);
+  }
+
+  .lightbox-museum-frame {
+    max-width: 320px;
+  }
+
+  .lightbox-actions-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lightbox-inquire-btn {
+    width: 100%;
+  }
+
+  .lightbox-nav-controls {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .lightbox-nav-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 599px) {
+  .artwork-lightbox-backdrop {
+    padding: 0.5rem;
+  }
+
+  .lightbox-top-bar {
+    padding: 0.85rem 1.25rem;
+  }
+
+  .lightbox-main-grid {
+    padding: 1.25rem 1rem;
+  }
+
+  .lightbox-museum-frame {
+    max-width: 260px;
+    padding: 0.75rem;
+  }
+
+  .lightbox-canvas-matting {
+    padding: 0.5rem;
+  }
+
+  .lightbox-artwork-title {
+    font-size: 1.75rem;
+  }
+
+  .lightbox-specs-sheet {
+    padding: 1rem;
+  }
+}

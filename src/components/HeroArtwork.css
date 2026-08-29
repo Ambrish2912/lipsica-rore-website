@@ -3,7 +3,35 @@
 .hero-art-display {
   position: relative;
   width: 100%;
-  max-width: 480px; /* ~8-10% larger than previous 440px */
+  max-width: 480px;
+  animation: heroArtEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             heroArtFloat 9s ease-in-out 1.2s infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes heroArtEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(14px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes heroArtFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
 }
 
 /* Subtle Organic Arc & Aura Behind Frame */

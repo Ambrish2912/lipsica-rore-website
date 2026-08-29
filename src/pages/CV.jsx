@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, CheckCircle2, GraduationCap, Building2, Award, BookOpen, Mic } from 'lucide-react';
+import AnimatedCounter from '../components/AnimatedCounter';
 import './CV.css';
 
 export default function CV() {
@@ -133,20 +134,20 @@ export default function CV() {
         <div className="cv-hero-ambient"></div>
         <div className="container">
           <div className="cv-hero-content">
-            <div className="cv-hero-eyebrow">
+            <div className="cv-hero-eyebrow hero-reveal-eyebrow">
               <span>PROFESSIONAL JOURNEY</span>
             </div>
 
-            <h1 className="cv-hero-headline">
+            <h1 className="cv-hero-headline hero-reveal-heading">
               A Journey of Purpose <br />
               <span className="headline-italic">&amp; Practice</span>
             </h1>
 
-            <p className="cv-hero-subtext">
+            <p className="cv-hero-subtext hero-reveal-subtext">
               “An evolving journey across healthcare, entrepreneurship, governance, community leadership and the arts.”
             </p>
 
-            <div className="cv-artist-badge">
+            <div className="cv-artist-badge hero-reveal-meta">
               <span className="cv-artist-name">Lipsica Rore</span>
               <span className="cv-artist-dot">&bull;</span>
               <div className="cv-location-inline">
@@ -298,7 +299,7 @@ export default function CV() {
 
             <div className="impact-content-grid">
               <div className="impact-num-box">
-                <span className="huge-num">30,000+</span>
+                <AnimatedCounter target={30000} suffix="+" duration={1800} className="huge-num" />
                 <span className="huge-lbl">Women Empowered</span>
                 <span className="huge-sub">Through the Sakhi Mandal Initiative (GSWT)</span>
               </div>

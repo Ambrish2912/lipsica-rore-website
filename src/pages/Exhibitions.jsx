@@ -123,20 +123,20 @@ export default function Exhibitions() {
         <div className="exhibitions-hero-ambient"></div>
         <div className="container">
           <div className="exhibitions-hero-content">
-            <div className="exhibitions-hero-eyebrow">
+            <div className="exhibitions-hero-eyebrow hero-reveal-eyebrow">
               <span>EXHIBITIONS</span>
             </div>
 
-            <h1 className="exhibitions-hero-headline">
+            <h1 className="exhibitions-hero-headline hero-reveal-heading">
               An Artistic Journey <br />
               <span className="headline-italic">Through Time</span>
             </h1>
 
-            <p className="exhibitions-hero-subtext">
+            <p className="exhibitions-hero-subtext hero-reveal-subtext">
               “From Ahmedabad to Niagara and beyond, Lipsica Rore’s work has evolved through years of exploration, reflection, healing and intuitive expression.”
             </p>
 
-            <div className="exhibitions-geography-pill">
+            <div className="exhibitions-geography-pill hero-reveal-meta">
               <MapPin size={14} className="geography-pin-icon" />
               <span>India &bull; Canada &bull; United States</span>
             </div>
@@ -259,6 +259,13 @@ export default function Exhibitions() {
               ))}
             </div>
           </div>
+
+          {/* Subtle Visual Transition Connector to Evolution */}
+          <div className="timeline-journey-transition" aria-hidden="true">
+            <div className="transition-line-top"></div>
+            <div className="transition-star-emblem">&#10022;</div>
+            <div className="transition-line-bottom"></div>
+          </div>
         </div>
       </section>
 
@@ -323,12 +330,12 @@ export default function Exhibitions() {
               </p>
 
               <div className="cta-actions-row">
-                <Link to="/contact" className="btn btn-primary cta-btn-contact">
-                  <span>CONTACT LIPSICA</span>
+                <Link to="/leadership" className="btn btn-primary cta-btn-contact">
+                  <span>DISCOVER LEADERSHIP &amp; IMPACT</span>
                   <ArrowRight size={15} className="cta-arrow" />
                 </Link>
-                <Link to="/art" className="btn btn-secondary-light cta-btn-art">
-                  <span>VIEW ARTWORKS</span>
+                <Link to="/contact" className="btn btn-secondary-light cta-btn-art">
+                  <span>GET IN TOUCH</span>
                 </Link>
               </div>
             </div>

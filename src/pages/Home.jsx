@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Compass, Heart, Award } from 'lucide-react';
 import HeroArtwork from '../components/HeroArtwork';
 import ArtworkCard from '../components/ArtworkCard';
+import AnimatedCounter from '../components/AnimatedCounter';
 import './Home.css';
 
 export default function Home() {
@@ -136,7 +137,7 @@ export default function Home() {
         <div className="hero-container">
           {/* Left Column: Editorial Statement */}
           <div className="hero-content">
-            <div className="hero-eyebrow">
+            <div className="hero-eyebrow hero-reveal-eyebrow">
               <span>MULTIDISCIPLINARY ARTIST</span>
               <span className="eyebrow-dot">&bull;</span>
               <span>COMMUNITY LEADER</span>
@@ -144,17 +145,17 @@ export default function Home() {
               <span>VISIONARY CREATOR</span>
             </div>
 
-            <h1 className="hero-headline">
+            <h1 className="hero-headline hero-reveal-heading">
               <span className="headline-row">Art that Heals.</span>
               <span className="headline-row">Leadership that</span>
               <span className="headline-row headline-accent">Empowers.</span>
             </h1>
 
-            <p className="hero-subtext">
+            <p className="hero-subtext hero-reveal-subtext">
               “Guided by Muza, my inner muse, I create art that invites reflection, healing, and transformation.”
             </p>
 
-            <div className="hero-actions">
+            <div className="hero-actions hero-reveal-cta">
               <Link to="/art" className="btn btn-primary hero-btn-primary">
                 <span>DISCOVER MY ART</span>
                 <ArrowRight size={15} className="btn-arrow" />
@@ -166,7 +167,7 @@ export default function Home() {
           </div>
 
           {/* Right Column: Museum-Grade Artwork Presentation */}
-          <div className="hero-visual-column">
+          <div className="hero-visual-column hero-reveal-visual">
             <HeroArtwork
               title="Awakenings with Muza"
               signature="Muza"
@@ -393,9 +394,7 @@ export default function Home() {
                 </div>
 
                 <div className="impact-statement-content">
-                  <span className="impact-stat-number">
-                    30,000<span className="stat-gold-plus">+</span>
-                  </span>
+                  <AnimatedCounter target={30000} suffix="+" duration={1800} className="impact-stat-number" />
                   <h3 className="impact-stat-title">Women Empowered</h3>
                   <p className="impact-stat-subtitle">Through the Sakhi Mandal Initiative</p>
                   
@@ -590,12 +589,12 @@ export default function Home() {
               </p>
 
               <div className="cta-buttons-row">
-                <Link to="/contact" className="btn btn-primary btn-large">
-                  <span>GET IN TOUCH</span>
+                <Link to="/art" className="btn btn-primary btn-large">
+                  <span>EXPLORE THE ART</span>
                   <ArrowRight size={16} />
                 </Link>
-                <Link to="/art" className="btn btn-secondary-light btn-large">
-                  <span>VIEW MY ART</span>
+                <Link to="/about" className="btn btn-secondary-light btn-large">
+                  <span>ABOUT THE ARTIST</span>
                 </Link>
               </div>
             </div>

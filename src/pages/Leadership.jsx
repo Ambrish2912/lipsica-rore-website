@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Award, CheckCircle2, Building2, BookOpen, Mic, GraduationCap } from 'lucide-react';
+import AnimatedCounter from '../components/AnimatedCounter';
 import './Leadership.css';
 
 export default function Leadership() {
@@ -110,27 +111,27 @@ export default function Leadership() {
           <div className="leadership-hero-grid">
             {/* Left Column: Narrative Headline */}
             <div className="leadership-hero-content">
-              <div className="leadership-hero-eyebrow">
+              <div className="leadership-hero-eyebrow hero-reveal-eyebrow">
                 <span>LEADERSHIP &amp; IMPACT</span>
               </div>
 
-              <h1 className="leadership-hero-headline">
+              <h1 className="leadership-hero-headline hero-reveal-heading">
                 Beyond the <br />
                 <span className="headline-italic">Canvas</span>
               </h1>
 
-              <p className="leadership-hero-subtext">
+              <p className="leadership-hero-subtext hero-reveal-subtext">
                 “A multidisciplinary journey across healthcare, entrepreneurship, social development, governance, and community leadership.”
               </p>
 
-              <div className="leadership-hero-location">
+              <div className="leadership-hero-location hero-reveal-meta">
                 <MapPin size={14} className="hero-pin-icon" />
                 <span>Niagara-on-the-Lake, Canada</span>
               </div>
             </div>
 
             {/* Right Column: Editorial Visual Frame */}
-            <div className="leadership-hero-visual">
+            <div className="leadership-hero-visual hero-reveal-visual">
               <div className="leadership-portrait-frame">
                 <div className="leadership-sanctuary-inner">
                   <div className="leadership-aura-svg-box" aria-hidden="true">
@@ -182,7 +183,7 @@ export default function Leadership() {
             <div className="impact-focal-layout">
               {/* Left Column: 30,000+ Metric Focus */}
               <div className="impact-metric-column">
-                <span className="impact-huge-number">30,000+</span>
+                <AnimatedCounter target={30000} suffix="+" duration={1800} className="impact-huge-number" />
                 <span className="impact-huge-label">Women Empowered</span>
                 <span className="impact-huge-sub">Through the Sakhi Mandal Initiative (GSWT)</span>
               </div>
@@ -447,12 +448,12 @@ export default function Leadership() {
               </p>
 
               <div className="cta-actions-group">
-                <Link to="/art" className="btn btn-primary cta-btn-art">
-                  <span>EXPLORE THE ART</span>
+                <Link to="/media" className="btn btn-primary cta-btn-art">
+                  <span>VIEW MEDIA &amp; RECOGNITION</span>
                   <ArrowRight size={15} className="cta-btn-arrow" />
                 </Link>
-                <Link to="/exhibitions" className="btn btn-secondary-light cta-btn-exhibitions">
-                  <span>VIEW EXHIBITIONS</span>
+                <Link to="/cv" className="btn btn-secondary-light cta-btn-exhibitions">
+                  <span>EXPLORE COMPLETE CV</span>
                 </Link>
               </div>
             </div>

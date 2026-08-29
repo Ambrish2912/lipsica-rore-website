@@ -1,4 +1,5 @@
 @import './variables.css';
+@import './animations.css';
 
 /* CSS Reset & Base */
 *, *::before, *::after {
@@ -85,6 +86,25 @@ select:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--color-champagne-gold);
   outline-offset: 2px;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 1000;
+  background-color: var(--color-deep-plum);
+  color: var(--color-warm-ivory);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
 }
 
 ul, ol {

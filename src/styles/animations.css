@@ -1,0 +1,287 @@
+/* ==========================================================================
+   PREMIUM ANIMATIONS & MICRO-INTERACTIONS DESIGN SYSTEM
+   Contemporary Art Gallery × Spiritual Luxury × Feminine Elegance
+   ========================================================================== */
+
+/* 1. Global Page Transition */
+.page-transition-wrapper {
+  animation: pageFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Hero Sequential Text Reveals (Auto-plays on Mount) */
+.hero-reveal-eyebrow {
+  opacity: 0;
+  animation: heroItemReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+.hero-reveal-heading {
+  opacity: 0;
+  animation: heroItemReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+
+.hero-reveal-subtext {
+  opacity: 0;
+  animation: heroItemReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+}
+
+.hero-reveal-meta,
+.hero-reveal-cta {
+  opacity: 0;
+  animation: heroItemReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+.hero-reveal-visual {
+  opacity: 0;
+  animation: heroVisualReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+@keyframes heroItemReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroVisualReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 3. Muza Ambient Floating & Sacred Aura Pulsing */
+.muza-floating-visual {
+  animation: muzaOrganicFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes muzaOrganicFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.4deg);
+  }
+  100% {
+    transform: translateY(-2px) rotate(-0.3deg);
+  }
+}
+
+.sacred-piece-aura svg,
+.aura-svg-pulse {
+  animation: auraSoftPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes auraSoftPulse {
+  0% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.025);
+  }
+}
+
+/* 4. Reusable Scroll Reveal System */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(2) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(3) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(4) { transition-delay: 0.35s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(5) { transition-delay: 0.45s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(6) { transition-delay: 0.55s; opacity: 1; transform: translateY(0); }
+
+/* 5. Decorative Gold Lines Drawing Animation */
+.gold-line-reveal {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-line-reveal.revealed,
+.revealed .gold-line-reveal {
+  transform: scaleX(1);
+}
+
+/* 6. Button Micro-Interactions */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:active {
+  transform: scale(0.985);
+}
+
+.btn svg,
+.btn .btn-arrow,
+.btn .cta-arrow {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover svg,
+.btn:hover .btn-arrow,
+.btn:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+/* 7. Navbar Link Hover Underline Animation */
+.desktop-nav .nav-link {
+  position: relative;
+}
+
+.desktop-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-deep-plum), var(--color-champagne-gold));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.desktop-nav .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.desktop-nav .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* 8. Mobile Navigation Drawer Staggered Item Entrance */
+.mobile-drawer.open .mobile-nav-item {
+  animation: mobileNavSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.mobile-drawer.open .mobile-nav-item:nth-child(1) { animation-delay: 0.04s; }
+.mobile-drawer.open .mobile-nav-item:nth-child(2) { animation-delay: 0.08s; }
+.mobile-drawer.open .mobile-nav-item:nth-child(3) { animation-delay: 0.12s; }
+.mobile-drawer.open .mobile-nav-item:nth-child(4) { animation-delay: 0.16s; }
+.mobile-drawer.open .mobile-nav-item:nth-child(5) { animation-delay: 0.20s; }
+.mobile-drawer.open .mobile-nav-item:nth-child(6) { animation-delay: 0.24s; }
+.mobile-drawer.open .mobile-nav-item:nth-child(7) { animation-delay: 0.28s; }
+.mobile-drawer.open .mobile-nav-item:nth-child(8) { animation-delay: 0.32s; }
+
+@keyframes mobileNavSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 9. Interactive Card Hover Details */
+.gallery-artwork-card,
+.pillar-card,
+.media-feature-card,
+.cv-card,
+.muza-aspect-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color var(--transition-normal);
+}
+
+.pillar-card:hover,
+.media-feature-card:hover,
+.cv-card:hover,
+.muza-aspect-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(50, 21, 46, 0.08);
+  border-color: var(--color-champagne-gold);
+}
+
+/* 10. Form Focus Micro-Transitions */
+.contact-input,
+.contact-textarea,
+.contact-select {
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+/* 11. Accessibility: PREFERS REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .page-transition-wrapper,
+  .hero-reveal-eyebrow,
+  .hero-reveal-heading,
+  .hero-reveal-subtext,
+  .hero-reveal-meta,
+  .hero-reveal-cta,
+  .hero-reveal-visual,
+  .reveal-on-scroll,
+  .reveal-stagger > *,
+  .gold-line-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .muza-floating-visual,
+  .sacred-piece-aura svg,
+  .aura-svg-pulse {
+    animation: none !important;
+    transform: none !important;
+  }
+}

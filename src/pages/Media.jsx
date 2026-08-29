@@ -34,19 +34,19 @@ export default function Media() {
         <div className="media-hero-ambient"></div>
         <div className="container">
           <div className="media-hero-container">
-            <div className="media-hero-eyebrow">
+            <div className="media-hero-eyebrow hero-reveal-eyebrow">
               <span>MEDIA &amp; RECOGNITION</span>
             </div>
 
-            <h1 className="media-hero-headline">
+            <h1 className="media-hero-headline hero-reveal-heading">
               In the <span className="headline-italic">Conversation</span>
             </h1>
 
-            <p className="media-hero-subtext">
+            <p className="media-hero-subtext hero-reveal-subtext">
               “From artistic exhibitions and publications to speaking and community recognition, Lipsica Rore’s work continues to connect creativity, healing and leadership.”
             </p>
 
-            <div className="media-hero-line-accent"></div>
+            <div className="media-hero-line-accent hero-reveal-meta"></div>
           </div>
         </div>
       </section>
@@ -217,12 +217,12 @@ export default function Media() {
               </p>
 
               <div className="cta-actions-group">
-                <Link to="/contact" className="btn btn-primary cta-btn-contact">
-                  <span>GET IN TOUCH</span>
+                <Link to="/cv" className="btn btn-primary cta-btn-contact">
+                  <span>EXPLORE PROFESSIONAL CV</span>
                   <ArrowRight size={15} className="cta-btn-arrow" />
                 </Link>
-                <Link to="/about" className="btn btn-secondary-light cta-btn-about">
-                  <span>ABOUT THE ARTIST</span>
+                <Link to="/contact" className="btn btn-secondary-light cta-btn-about">
+                  <span>GET IN TOUCH</span>
                 </Link>
               </div>
             </div>

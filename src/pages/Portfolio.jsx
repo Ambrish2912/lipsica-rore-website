@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, Maximize2 } from 'lucide-react';
+import ArtworkLightbox from '../components/ArtworkLightbox';
 import './Portfolio.css';
 
 export default function Portfolio() {
+  const [selectedArtworkIndex, setSelectedArtworkIndex] = useState(null);
+
   // Reusable Artwork Data Architecture
-  // Ready to accept real image strings like "/assets/receiving-abundance.jpg" without redesigning
   const artworks = [
     {
       id: 'receiving-abundance',
@@ -51,19 +53,19 @@ export default function Portfolio() {
         <div className="art-hero-ambient-glow"></div>
         <div className="container">
           <div className="art-hero-container">
-            <div className="art-hero-eyebrow">
+            <div className="art-hero-eyebrow hero-reveal-eyebrow">
               <span>THE ART</span>
             </div>
 
-            <h1 className="art-hero-headline">
+            <h1 className="art-hero-headline hero-reveal-heading">
               Art as a <span className="headline-italic">Visual Meditation</span>
             </h1>
 
-            <p className="art-hero-subtext">
+            <p className="art-hero-subtext hero-reveal-subtext">
               “Through layered textures, organic materials, and symbolic forms, Lipsica Rore explores emotional depth, resilience, spiritual transformation, and the quiet reclamation of beauty.”
             </p>
 
-            <div className="art-hero-meta-row">
+            <div className="art-hero-meta-row hero-reveal-meta">
               <div className="art-location-pill">
                 <MapPin size={14} className="meta-icon" />
                 <span>Niagara-on-the-Lake, Canada</span>
@@ -124,9 +126,21 @@ export default function Portfolio() {
                 className={`curated-artwork-display ${idx % 2 === 0 ? 'layout-standard' : 'layout-reversed'}`}
                 aria-label={`Curated presentation of ${artwork.title}`}
               >
-                {/* Artwork Museum Presentation Frame */}
+                {/* Artwork Museum Presentation Frame (Interactive Clickable Trigger) */}
                 <div className="artwork-gallery-presentation-column">
-                  <div className="museum-exhibition-frame">
+                  <div
+                    className="museum-exhibition-frame interactive-frame"
+                    onClick={() => setSelectedArtworkIndex(idx)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setSelectedArtworkIndex(idx);
+                      }
+                    }}
+                    aria-label={`View full details for ${artwork.title}`}
+                  >
                     <div className="museum-canvas-viewport">
                       {artwork.image ? (
                         <img
@@ -139,23 +153,21 @@ export default function Portfolio() {
                         /* Sophisticated Museum Placeholder Canvas with Series Watermark */
                         <div className="museum-placeholder-sanctuary" role="img" aria-label={artwork.title}>
                           <div className="canvas-subtle-weave"></div>
-                          
+
                           {/* Dedicated Sacred Geometric Aura based on piece */}
                           <div className="sacred-piece-aura" aria-hidden="true">
                             <svg viewBox="0 0 340 420" fill="none" xmlns="http://www.w3.org/2000/svg" className="piece-aura-svg">
                               <circle cx="170" cy="210" r="140" stroke="#C6A15B" strokeWidth="0.8" strokeDasharray="4 6" opacity="0.45" />
                               <circle cx="170" cy="210" r="105" stroke="#B9828F" strokeWidth="0.9" opacity="0.4" />
                               <circle cx="170" cy="210" r="70" stroke="#32152E" strokeWidth="0.8" opacity="0.3" />
-                              
+
                               {artwork.id === 'receiving-abundance' ? (
-                                /* Concentric Mandala Flower */
                                 <>
                                   <path d="M170 80 Q240 210 170 340 Q100 210 170 80 Z" stroke="#C6A15B" strokeWidth="1" opacity="0.6" />
                                   <path d="M40 210 Q170 140 300 210 Q170 280 40 210 Z" stroke="#B9828F" strokeWidth="1" opacity="0.5" />
                                   <circle cx="170" cy="210" r="5" fill="#C6A15B" />
                                 </>
                               ) : (
-                                /* Ascending Sacred Direction Vectors */
                                 <>
                                   <path d="M170 50 L170 370" stroke="#C6A15B" strokeWidth="1.2" opacity="0.65" />
                                   <path d="M130 110 L170 50 L210 110" stroke="#C6A15B" strokeWidth="1.2" opacity="0.75" />
@@ -173,6 +185,14 @@ export default function Portfolio() {
                           </div>
                         </div>
                       )}
+
+                      {/* Subtle Interactive Hover Overlay */}
+                      <div className="artwork-hover-overlay" aria-hidden="true">
+                        <span className="hover-action-pill">
+                          <Maximize2 size={13} className="hover-action-icon" />
+                          <span>VIEW ARTWORK &rarr;</span>
+                        </span>
+                      </div>
                     </div>
                     <div className="museum-frame-gold-accent"></div>
                   </div>
@@ -185,7 +205,21 @@ export default function Portfolio() {
                     <span className="details-index-pill">0{idx + 1}</span>
                   </div>
 
-                  <h3 className="artwork-curatorial-title">{artwork.title}</h3>
+                  <h3
+                    className="artwork-curatorial-title interactive-title"
+                    onClick={() => setSelectedArtworkIndex(idx)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setSelectedArtworkIndex(idx);
+                      }
+                    }}
+                    aria-label={`Open details for ${artwork.title}`}
+                  >
+                    {artwork.title}
+                  </h3>
 
                   <p className="artwork-curatorial-description">
                     {artwork.description}
@@ -208,10 +242,18 @@ export default function Portfolio() {
                     </div>
                   </div>
 
-                  <div className="artwork-inquiry-action">
+                  <div className="artwork-actions-row">
+                    <button
+                      type="button"
+                      className="btn btn-primary gallery-view-btn"
+                      onClick={() => setSelectedArtworkIndex(idx)}
+                    >
+                      <span>VIEW ARTWORK</span>
+                      <ArrowRight size={14} />
+                    </button>
+
                     <Link to="/contact" className="btn btn-outline gallery-inquire-btn">
                       <span>INQUIRE ABOUT THIS PIECE</span>
-                      <ArrowRight size={15} />
                     </Link>
                   </div>
                 </div>
@@ -229,7 +271,7 @@ export default function Portfolio() {
             <div className="muza-connection-content">
               <span className="art-gold-eyebrow">INTUITIVE ORIGIN</span>
               <h2 className="art-serif-heading">The Presence of Muza</h2>
-              
+
               <blockquote className="muza-connection-quote">
                 “Muza is Lipsica’s inner muse—an intuitive, feminine voice that speaks through symbol, texture, and color.”
               </blockquote>
@@ -315,6 +357,15 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
+      {/* Fullscreen Artwork Lightbox */}
+      <ArtworkLightbox
+        isOpen={selectedArtworkIndex !== null}
+        onClose={() => setSelectedArtworkIndex(null)}
+        artworks={artworks}
+        currentIndex={selectedArtworkIndex || 0}
+        onIndexChange={(newIdx) => setSelectedArtworkIndex(newIdx)}
+      />
     </div>
   );
 }

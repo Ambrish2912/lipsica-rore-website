@@ -24,27 +24,27 @@ export default function About() {
           <div className="about-hero-grid">
             {/* Left Column: Editorial Statement */}
             <div className="about-hero-content">
-              <div className="about-hero-eyebrow">
+              <div className="about-hero-eyebrow hero-reveal-eyebrow">
                 <span>ABOUT THE ARTIST</span>
               </div>
 
-              <h1 className="about-hero-headline">
+              <h1 className="about-hero-headline hero-reveal-heading">
                 The Artist Behind <br />
                 <span className="headline-italic">the Vision</span>
               </h1>
 
-              <p className="about-hero-subtext">
+              <p className="about-hero-subtext hero-reveal-subtext">
                 “Lipsica Rore is a multidisciplinary artist whose work bridges the sacred and the intuitive, exploring the feminine force within nature, memory, and inner transformation.”
               </p>
 
-              <div className="about-hero-location">
+              <div className="about-hero-location hero-reveal-meta">
                 <MapPin size={15} className="location-pin-icon" />
                 <span>Niagara-on-the-Lake, Canada</span>
               </div>
             </div>
 
             {/* Right Column: Museum-Grade Portrait Presentation */}
-            <div className="about-hero-visual">
+            <div className="about-hero-visual hero-reveal-visual">
               <div className="portrait-showcase-frame">
                 <div className="portrait-inner-sanctuary">
                   <div className="portrait-sacred-aura" aria-hidden="true">

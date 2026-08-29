@@ -56,20 +56,20 @@ export default function Contact() {
         <div className="contact-hero-ambient"></div>
         <div className="container">
           <div className="contact-hero-container">
-            <div className="contact-hero-eyebrow">
+            <div className="contact-hero-eyebrow hero-reveal-eyebrow">
               <span>GET IN TOUCH</span>
             </div>
 
-            <h1 className="contact-hero-headline">
+            <h1 className="contact-hero-headline hero-reveal-heading">
               Let the Art Begin <br />
               <span className="headline-italic">a Conversation</span>
             </h1>
 
-            <p className="contact-hero-subtext">
+            <p className="contact-hero-subtext hero-reveal-subtext">
               “For exhibitions, collaborations, gallery opportunities, or to connect with Lipsica Rore, get in touch.”
             </p>
 
-            <div className="contact-hero-gold-line"></div>
+            <div className="contact-hero-gold-line hero-reveal-meta"></div>
           </div>
         </div>
       </section>
